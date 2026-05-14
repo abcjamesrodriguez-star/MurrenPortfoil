@@ -1,0 +1,6 @@
+export { default as ColeccionCard } from './ColeccionCard'
+export { default as CategoriaCard } from './CategoriaCard'
+export { default as ProductoCard } from './ProductoCard'
+export { default as CargarMasBtn } from './CargarMasBtn'
+export { default as FiltroBar } from './FiltroBar'
+export { default as OrdenarPor } from './OrdenarPor'
