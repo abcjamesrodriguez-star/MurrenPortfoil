@@ -19,15 +19,19 @@ const THEMES: { id: Theme; label: string; colors: string[] }[] = [
 ]
 
 export default function ThemeSwitcher() {
-  const [current, setCurrent] = useState<Theme>("noir")
+  const [current, setCurrent] = useState<Theme>("industrial")
   const [open, setOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
-  // Load theme from localStorage on mount
+  // Solo se ejecuta en el cliente — evita hydration mismatch
   useEffect(() => {
     const saved = (localStorage.getItem("murren-theme") as Theme) || "industrial"
     setCurrent(saved)
     document.documentElement.setAttribute("data-theme", saved)
+    setMounted(true)
   }, [])
+
+  if (!mounted) return null
 
   const applyTheme = (theme: Theme) => {
     setCurrent(theme)

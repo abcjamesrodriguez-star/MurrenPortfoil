@@ -26,6 +26,7 @@ export default function RootLayout({
     <html
       lang="es"
       data-theme="industrial"
+      suppressHydrationWarning
       className={`${oswald.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useMemo } from "react"
-import { Collection, Product, FiltroState } from "@/types"
+import { Collection, Product, FiltroState, FiltroCategoriaState } from "@/types"
 import ColeccionHeroV2 from "./ColeccionHeroV2"
 import ColeccionCampana from "./ColeccionCampana"
 import ColeccionFeatures from "./ColeccionFeatures"
@@ -28,10 +28,11 @@ export default function ColeccionDetalleView({ coleccion, initialProducts }: Col
   // Estado para la categoría activa del Hero ("" significa VER TODO)
   const [categoriaActiva, setCategoriaActiva] = useState<string>("")
 
-  const [filtros, setFiltros] = useState<FiltroState>({
-    categoria: null, // Ya no se usa para filtrar, pero lo mantenemos por compatibilidad de tipos si es necesario
+  const [filtros, setFiltros] = useState<FiltroCategoriaState>({
     talla: null,
     color: null,
+    precioMin: null,
+    precioMax: null,
     orden: "relevancia" as const,
   })
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE)

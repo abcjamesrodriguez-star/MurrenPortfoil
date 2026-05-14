@@ -88,3 +88,45 @@ export type FiltroCategoriaState = {
   precioMax: number | null
   orden: "precio-asc" | "precio-desc" | "nuevo" | "relevancia" | null
 }
+
+export type NavItem = {
+  label: string
+  href: string
+  dropdown?: { label: string; href: string }[]
+}
+
+export type NewsItem = {
+  id: string | number
+  tag: string
+  title: string
+  status: string
+  image: string | { src: string } | any
+}
+
+export type ProductItem = {
+  id: string | number
+  name: string
+  image: string | { src: string } | any
+  season: string
+  slug?: string
+}
+
+export type LocationItem = {
+  id: string
+  type: string
+  addressLine1: string
+  addressLine2?: string
+  city: string
+  hours?: string
+}
+
+export type FooterLinkGroup = {
+  title: string
+  links: { label: string; href: string }[]
+}
+
+export type SocialLink = {
+  platform: string
+  href: string
+  icon?: string
+}
