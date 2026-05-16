@@ -1,5 +1,5 @@
-import image1 from '@/assets/1.webp';
-import image2 from '@/assets/2.webp';
+import image1 from '@/assets/Mockup.jpeg';
+import image2 from '@/assets/Mockup.jpeg';
 
 export const aboutData = {
   hero: {

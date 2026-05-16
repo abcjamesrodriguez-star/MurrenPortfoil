@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play } from '@phosphor-icons/react';
 import Image from 'next/image';
-import image1 from '@/assets/1.webp';
+import image1 from '@/assets/Mockup.jpeg';
 
 export default function Hero() {
   return (
@@ -21,7 +21,7 @@ export default function Hero() {
       {/* YouTube Video Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <iframe 
-          src="https://www.youtube.com/embed/CqaAs_3azSs?autoplay=1&mute=1&controls=0&loop=1&playlist=CqaAs_3azSs&playsinline=1" 
+          src="https://www.youtube.com/embed/62OqU61CxLM?autoplay=1&mute=1&controls=0&loop=1&playlist=62OqU61CxLM&playsinline=1" 
           className="absolute top-1/2 left-1/2 w-[150vw] h-[150vh] min-w-[100vw] min-h-[100vh] -translate-x-1/2 -translate-y-1/2"
           allow="autoplay; encrypted-media"
           frameBorder="0"
@@ -29,7 +29,7 @@ export default function Hero() {
       </div>
 
       {/* Overlay to ensure text legibility */}
-      <div className="absolute inset-0 bg-background/50 z-0" />
+      <div className="absolute inset-0 bg-black/60 z-0" />
 
       <div className="relative z-10 w-full px-6 md:px-12 lg:px-24 flex flex-col items-start justify-center">
         
@@ -47,7 +47,7 @@ export default function Hero() {
 
             {/* Main Headline */}
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold uppercase leading-[0.9] tracking-tighter mb-4 text-foreground">
-              URBAN<br />FLOW
+              MURREN
             </h1>
 
             {/* Subline */}
@@ -67,15 +67,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Floating Play Button Area (from mockup) */}
-        <motion.div 
-          className="absolute right-1/4 top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center w-24 h-24 rounded-full border border-foreground cursor-pointer hover:bg-foreground/5 transition-colors bg-background"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.5 }}
-        >
-          <Play size={32} weight="light" className="ml-2" />
-        </motion.div>
+
 
       </div>
 

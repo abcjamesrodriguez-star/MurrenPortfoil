@@ -24,7 +24,7 @@ function mapProduct(p: ProductRaw): Product {
   const isDestacada = ['espora', 'medusa', 'susie', 'kill-bill', 'static'].includes(p.handle)
   const isFW23 = p.tipo.toLowerCase().includes('cuerina')
   let coleccionSlug = 'essentials'
-  if (isDestacada) coleccionSlug = 'urban-flow'
+  if (isDestacada) coleccionSlug = 'murren'
   else if (isFW23) coleccionSlug = 'chrome-series'
   else if (isJacket) coleccionSlug = 'denim-core'
   else if (p.handle.includes('falda')) coleccionSlug = 'nebula-drop'
@@ -49,7 +49,7 @@ import { ColeccionProxima } from '@/types'
 export async function getCollections(): Promise<Collection[]> {
   await delay(500)
   return [
-    { id: '1', numero: 1, slug: 'urban-flow', nombre: 'URBAN FLOW', temporada: 'SS24', tags: ['SS24', 'DESTACADA'], estaActual: true, imagen: '/images/products/espora/1.jpg' },
+    { id: '1', numero: 1, slug: 'murren', nombre: 'MURREN', temporada: 'SS24', tags: ['SS24', 'DESTACADA'], estaActual: true, imagen: '/images/products/espora/1.jpg' },
     { id: '2', numero: 2, slug: 'nebula-drop', nombre: 'NEBULA DROP', temporada: 'SS24', tags: ['SS24', 'NUEVA'], imagen: '/images/products/falda-larga-cargo-denim/1.jpg' },
     { id: '3', numero: 3, slug: 'chrome-series', nombre: 'CHROME SERIES', temporada: 'FW23', tags: ['FW23', 'DESTACADA'], imagen: '/images/products/cuerina-raya/1.jpg' },
     { id: '4', numero: 4, slug: 'denim-core', nombre: 'DENIM CORE', temporada: 'SS24', tags: ['SS24'], imagen: '/images/products/chaqueta-over/1.jpg' },

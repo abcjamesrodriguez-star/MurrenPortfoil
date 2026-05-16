@@ -19,16 +19,16 @@ export default function AboutValores() {
   }
 
   return (
-    <div className="relative w-full border-r border-gray-200">
+    <div className="relative w-full border-r border-foreground/10">
       {/* Tab Lateral Izquierdo */}
-      <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 rotate-90 text-[10px] tracking-[0.2em] text-gray-400 whitespace-nowrap select-none pointer-events-none -translate-x-1/2 z-10">
+      <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 rotate-90 text-[10px] tracking-[0.2em] text-foreground/30 whitespace-nowrap select-none pointer-events-none -translate-x-1/2 z-10">
         VALORES + IMÁGENES
       </div>
 
       <div className="flex flex-col md:grid md:grid-cols-[200px_200px_1fr] h-full">
         
         {/* Imagen 1 */}
-        <div className="relative h-[200px] md:h-full border-b md:border-b-0 md:border-r border-gray-200">
+        <div className="relative h-[200px] md:h-full border-b md:border-b-0 md:border-r border-foreground/10">
           <Image 
             src={valores.imagenes[0].src} 
             alt="Valores 1" 
@@ -38,7 +38,7 @@ export default function AboutValores() {
         </div>
 
         {/* Imagen 2 con fecha */}
-        <div className="relative h-[200px] md:h-full border-b md:border-b-0 md:border-r border-gray-200">
+        <div className="relative h-[200px] md:h-full border-b md:border-b-0 md:border-r border-foreground/10">
           <Image 
             src={valores.imagenes[1].src} 
             alt="Valores 2" 
@@ -53,8 +53,8 @@ export default function AboutValores() {
         </div>
 
         {/* Lista de Valores */}
-        <div className="p-6 lg:p-8 flex flex-col justify-center bg-white">
-          <span className="text-xs font-bold tracking-widest uppercase text-gray-500 mb-6 block">
+        <div className="p-6 lg:p-8 flex flex-col justify-center bg-background">
+          <span className="text-xs font-bold tracking-widest uppercase text-foreground/50 mb-6 block">
             // NUESTROS VALORES
           </span>
 
@@ -72,16 +72,16 @@ export default function AboutValores() {
               <motion.div 
                 key={idx}
                 variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
-                className="flex gap-4 py-4 border-b border-gray-200 last:border-0"
+                className="flex gap-4 py-4 border-b border-foreground/10 last:border-0"
               >
-                <div className="text-black flex-shrink-0 mt-0.5">
+                <div className="text-foreground flex-shrink-0 mt-0.5">
                   {renderIcon(valor.icono)}
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-black mb-2">
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-foreground mb-2">
                     {valor.titulo}
                   </h4>
-                  <p className="text-xs text-gray-500 leading-relaxed">
+                  <p className="text-xs text-foreground/60 leading-relaxed">
                     {valor.descripcion}
                   </p>
                 </div>

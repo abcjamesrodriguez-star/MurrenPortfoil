@@ -1,6 +1,6 @@
 import { NavItem, NewsItem, ProductItem, LocationItem, FooterLinkGroup, SocialLink } from '@/types';
-import image1 from '@/assets/1.webp';
-import image2 from '@/assets/2.webp';
+import image1 from '@/assets/Mockup.jpeg';
+import image2 from '@/assets/Mockup.jpeg';
 export const navigationLinks: NavItem[] = [
   { label: 'INICIO', href: '/' },
   { label: 'COLECCIONES', href: '/colecciones' },

@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { MagnifyingGlass, User, ShoppingCart, CaretDown } from '@phosphor-icons/react';
+import Image from 'next/image';
+import logo from '@/assets/logo.svg';
 import { navigationLinks } from '@/lib/data';
 
 export default function Navbar() {
@@ -27,17 +29,8 @@ export default function Navbar() {
       className={`fixed left-0 right-0 z-50 flex items-center justify-between px-6 py-4 border-b`}
       style={{ borderBottomWidth: '1px' }}
     >
-      {/* Logo Placeholder */}
-      <Link href="/" className="flex items-center justify-center w-12 h-12 border border-foreground">
-        {/* Placeholder X */}
-        <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="0" y1="0" x2="100" y2="100" stroke="currentColor" strokeWidth="2" />
-          <line x1="100" y1="0" x2="0" y2="100" stroke="currentColor" strokeWidth="2" />
-        </svg>
-      </Link>
-
-      {/* Center Links */}
-      <div className="hidden md:flex items-center space-x-8 text-sm font-medium tracking-widest uppercase">
+      {/* Left Links */}
+      <div className="hidden md:flex flex-1 items-center space-x-8 text-sm font-medium tracking-widest uppercase">
         {navigationLinks.map((link) => (
           <div key={link.label} className="relative group flex items-center gap-1 cursor-pointer">
             <Link href={link.href} className="hover:opacity-70 transition-opacity">
@@ -59,8 +52,37 @@ export default function Navbar() {
         ))}
       </div>
 
+      {/* Center Logo */}
+      <div className="w-24 h-12 relative flex justify-center shrink-0">
+        <Link href="/" className="absolute left-1/2 -translate-x-1/2 top-0 z-50">
+          <motion.div
+            animate={{
+              height: scrolled ? 56 : 160,
+              width: scrolled ? 56 : 90,
+            }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="relative origin-top bg-black"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/logo.svg" 
+              alt="Murren Logo" 
+              style={{ 
+                position: 'absolute',
+                width: '300%', 
+                height: '300%', 
+                objectFit: 'contain',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+              }} 
+            />
+          </motion.div>
+        </Link>
+      </div>
+
       {/* Right Icons */}
-      <div className="flex items-center space-x-6">
+      <div className="flex flex-1 items-center justify-end space-x-6">
         <button className="hover:opacity-70 transition-opacity" aria-label="Search">
           <MagnifyingGlass size={24} weight="regular" />
         </button>
