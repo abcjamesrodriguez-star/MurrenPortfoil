@@ -13,7 +13,7 @@ export default async function ColeccionesPage() {
   const actual = getColeccionActual(colecciones)
 
   return (
-    <main className="w-full bg-white">
+    <main className="w-full bg-white text-black">
       <ColeccionesHero actual={actual} />
       <ColeccionesLayout colecciones={colecciones} />
     </main>

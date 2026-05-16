@@ -26,7 +26,7 @@ export default function ColeccionesLayout({ colecciones }: { colecciones: Collec
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col lg:grid lg:grid-cols-[200px_1fr_280px] border-t border-neutral-200 min-h-screen">
+      <div className="flex flex-col lg:grid lg:grid-cols-[200px_1fr_280px] border-t border-neutral-200 min-h-screen text-black">
         <ColeccionesSidebar
           filtroActivo={filtroActivo}
           conteos={conteos}

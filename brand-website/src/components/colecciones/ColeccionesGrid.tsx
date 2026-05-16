@@ -8,7 +8,7 @@ export default function ColeccionesGrid({ colecciones }: { colecciones: Collecti
   const fila2 = colecciones.slice(3, 6)
 
   return (
-    <div className="bg-white">
+    <div className="bg-white text-black">
       <AnimatePresence mode="wait">
         <motion.div
           key={colecciones.map(c => c.id).join("-")}

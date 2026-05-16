@@ -17,7 +17,7 @@ const lineas = [
 
 export default function ColeccionesHero({ actual }: { actual: Collection }) {
   return (
-    <section className="relative px-8 pt-10 pb-0 overflow-hidden min-h-[340px]" style={{ backgroundColor: 'var(--color-surface-subtle)' }}>
+    <section className="relative bg-neutral-50 px-8 pt-10 pb-0 overflow-hidden min-h-[340px]">
 
       {/* SVG líneas decorativas */}
       <svg
@@ -41,20 +41,20 @@ export default function ColeccionesHero({ actual }: { actual: Collection }) {
 
       {/* Contenido izquierdo */}
       <div className="relative z-10 max-w-[320px]">
-        <p className="text-[10px] tracking-[0.2em] font-mono mb-3" style={{ color: 'var(--color-text-muted)' }}>
+        <p className="text-xs tracking-[0.2em] text-neutral-400 font-mono mb-3">
           // COLECCIONES
         </p>
-        <h1 className="text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight mb-4">
+        <h1 className="text-7xl font-black uppercase leading-none tracking-tight mb-4 text-black">
           COLECCIONES
         </h1>
-        <p className="text-xs leading-relaxed mb-6 font-medium" style={{ color: 'var(--color-text-muted)' }}>
+        <p className="text-sm text-neutral-500 leading-relaxed mb-6">
           Cada colección es una historia.<br />
           Descubre los drops que definen<br />
           nuestra visión.
         </p>
         <Link
           href="/manifiesto"
-          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest underline underline-offset-4 hover:opacity-60 transition-opacity"
+          className="inline-flex items-center gap-2 text-sm font-medium underline underline-offset-4 hover:opacity-60 transition-opacity text-black"
         >
           VER MANIFIESTO <ArrowRight size={14} />
         </Link>
@@ -63,7 +63,7 @@ export default function ColeccionesHero({ actual }: { actual: Collection }) {
       {/* Colección actual — esquina inferior derecha */}
       <div className="absolute bottom-0 right-6 pb-4 text-right min-w-[200px]">
         <div className="border-t border-neutral-300 pt-3">
-          <p className="text-[10px] tracking-[0.2em] uppercase mb-1" style={{ color: 'var(--color-text-muted)' }}>
+          <p className="text-[10px] tracking-[0.2em] text-neutral-400 uppercase mb-1">
             ACTUAL
           </p>
           <Link
@@ -72,7 +72,7 @@ export default function ColeccionesHero({ actual }: { actual: Collection }) {
           >
             <div>
               <p className="font-bold text-base uppercase leading-none mb-1">{actual.nombre}</p>
-              <p className="text-[10px] font-bold tracking-widest" style={{ color: 'var(--color-text-muted)' }}>{actual.temporada}</p>
+              <p className="text-xs text-neutral-400">{actual.temporada}</p>
             </div>
             <ArrowRight
               size={16}

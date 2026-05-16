@@ -7,8 +7,9 @@ import { MagnifyingGlass, User, ShoppingCart, CaretDown } from '@phosphor-icons/
 import Image from 'next/image';
 import logo from '@/assets/logo.svg';
 import { navigationLinks } from '@/lib/data';
+import { Category } from '@/types';
 
-export default function Navbar() {
+export default function Navbar({ categories = [] }: { categories?: Category[] }) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -16,6 +17,19 @@ export default function Navbar() {
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  const finalLinks = navigationLinks.map(link => {
+    if (link.label === 'CATEGORÍAS' && categories.length > 0) {
+      return {
+        ...link,
+        dropdown: categories.map(c => ({
+          label: c.nombre.toUpperCase(),
+          href: `/categorias/${c.slug}`
+        }))
+      };
+    }
+    return link;
+  });
 
   return (
     <motion.nav
@@ -31,8 +45,8 @@ export default function Navbar() {
     >
       {/* Left Links */}
       <div className="hidden md:flex flex-1 items-center space-x-8 text-sm font-medium tracking-widest uppercase">
-        {navigationLinks.map((link) => (
-          <div key={link.label} className="relative group flex items-center gap-1 cursor-pointer">
+        {finalLinks.map((link) => (
+          <div key={link.label} className="relative z-[60] group flex items-center gap-1 cursor-pointer">
             <Link href={link.href} className="hover:opacity-70 transition-opacity">
               {link.label}
             </Link>
@@ -40,12 +54,14 @@ export default function Navbar() {
             
             {/* Simple Dropdown representation */}
             {link.dropdown && (
-              <div className="absolute top-full left-0 mt-4 hidden group-hover:flex flex-col bg-background border border-foreground/10 py-2 min-w-[150px]">
-                {link.dropdown.map((subLink) => (
-                  <Link key={subLink.label} href={subLink.href} className="px-4 py-2 hover:bg-foreground/5 text-xs">
-                    {subLink.label}
-                  </Link>
-                ))}
+              <div className="absolute top-full left-0 pt-4 hidden group-hover:block z-[60]">
+                <div className="flex flex-col bg-black text-white border border-white/20 py-2 min-w-[150px] shadow-lg">
+                  {link.dropdown.map((subLink) => (
+                    <Link key={subLink.label} href={subLink.href} className="px-4 py-2 hover:bg-white/10 text-xs">
+                      {subLink.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             )}
           </div>
@@ -53,24 +69,23 @@ export default function Navbar() {
       </div>
 
       {/* Center Logo */}
-      <div className="w-24 h-12 relative flex justify-center shrink-0">
-        <Link href="/" className="absolute left-1/2 -translate-x-1/2 top-0 z-50">
+      <div className="relative flex justify-center shrink-0 w-32 h-12">
+        <Link href="/" className="absolute left-1/2 -translate-x-1/2 top-0 z-50 flex justify-center">
           <motion.div
             animate={{
-              height: scrolled ? 56 : 160,
-              width: scrolled ? 56 : 90,
+              height: scrolled ? 80 : 300,
+              width: scrolled ? 80 : 160,
+              y: scrolled ? 0 : -30
             }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="relative origin-top bg-black"
+            className="relative origin-top"
             style={{
               backgroundImage: 'url(/logo.svg)',
-              backgroundSize: '220%',
+              backgroundSize: '300%',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
             }}
-          >
-          
-          </motion.div>
+          />
         </Link>
       </div>
 

@@ -5,6 +5,7 @@ import "./globals.css";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { getCategories } from "@/lib/api";
 
 const oswald = Oswald({
   weight: ["300", "400", "500", "700"],
@@ -17,11 +18,13 @@ export const metadata: Metadata = {
   description: "MURREN no es ropa. Es una forma de existir.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const categories = await getCategories();
+
   return (
     <html
       lang="es"
@@ -35,7 +38,7 @@ export default function RootLayout({
           {`(function(){try{var t=localStorage.getItem('murren-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`}
         </Script>
         <AnnouncementBar />
-        <Navbar />
+        <Navbar categories={categories} />
         <main className="flex-1 pt-24">{children}</main>
         <Footer />
       </body>
