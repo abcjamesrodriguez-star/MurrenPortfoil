@@ -573,7 +573,7 @@ export async function getColeccionProxima(): Promise<ColeccionProxima> {
 
 **Actualizar los mocks** para agregar `numero` y convertir `tag` → `tags` (array):
 ```ts
-{ id: "1", numero: 1, slug: "urban-flow",    nombre: "URBAN FLOW",    temporada: "SS24",  tags: ["SS24", "DESTACADA"], estaActual: true,  imagen: "..." },
+{ id: "1", numero: 1, slug: "murren",    nombre: "MURREN",    temporada: "SS24",  tags: ["SS24", "DESTACADA"], estaActual: true,  imagen: "..." },
 { id: "2", numero: 2, slug: "nebula-drop",   nombre: "NEBULA DROP",   temporada: "SS24",  tags: ["SS24", "NUEVA"],                        imagen: "..." },
 { id: "3", numero: 3, slug: "chrome-series", nombre: "CHROME SERIES", temporada: "FW23",  tags: ["FW23", "DESTACADA"],                    imagen: "..." },
 { id: "4", numero: 4, slug: "denim-core",    nombre: "DENIM CORE",    temporada: "SS24",  tags: ["SS24"],                                 imagen: "..." },

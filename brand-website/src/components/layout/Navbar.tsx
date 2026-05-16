@@ -4,8 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { MagnifyingGlass, User, ShoppingCart, CaretDown } from '@phosphor-icons/react';
-import Image from 'next/image';
-import logo from '@/assets/logo.svg';
 import { navigationLinks } from '@/lib/data';
 import { Category } from '@/types';
 
@@ -80,10 +78,11 @@ export default function Navbar({ categories = [] }: { categories?: Category[] })
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className="relative origin-top"
             style={{
-              backgroundImage: 'url(/logo.svg)',
-              backgroundSize: '300%',
+              backgroundImage: 'url(/LogoUnitono.svg)',
+              backgroundSize: 'contain',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
+              filter: 'brightness(0) invert(1)',
             }}
           />
         </Link>

@@ -60,7 +60,7 @@ export type Collection = {
 ### Fase 1.1 — Estructura base y tipos
 - [ ] Crear ruta `src/app/colecciones/page.tsx`
 - [ ] Definir tipo `Collection` en `src/types/index.ts`
-- [ ] Crear datos mock en `src/lib/colecciones.ts` con 6 colecciones (Urban Flow, Nebula Drop, Chrome Series, Denim Core, Midnight Club, Essentials)
+- [ ] Crear datos mock en `src/lib/colecciones.ts` con 6 colecciones (Murren, Nebula Drop, Chrome Series, Denim Core, Midnight Club, Essentials)
 
 ### Fase 1.2 — Hero de la sección
 - [ ] Componente `ColeccionesHero.tsx`

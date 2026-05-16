@@ -135,7 +135,7 @@ type ProductoGaleriaProps = {
 
 Componente: `ProductoInfo.tsx` — `"use client"`
 
-- [ ] Breadcrumb: `← COLECCIÓN: URBAN FLOW` con link a `/colecciones/[slug]` e ícono `ArrowLeft`
+- [ ] Breadcrumb: `← COLECCIÓN: MURREN` con link a `/colecciones/[slug]` e ícono `ArrowLeft`
 - [ ] Nombre del producto en mayúsculas, tipografía grande
 - [ ] Precio formateado (`$000.000`)
 - [ ] Descripción corta (2-3 líneas)
@@ -219,7 +219,7 @@ Componente: `ProductoDetallesMedia.tsx`
 Componente: `ColeccionBanner.tsx`
 
 - [ ] Mitad izquierda de la banda
-- [ ] Nombre de la colección grande (ej. `URBAN FLOW`)
+- [ ] Nombre de la colección grande (ej. `MURREN`)
 - [ ] Temporada debajo (ej. `SS24`)
 - [ ] Imagen de la colección como fondo o a la derecha
 - [ ] Link `VER COLECCIÓN →` con `ArrowRight` de Phosphor

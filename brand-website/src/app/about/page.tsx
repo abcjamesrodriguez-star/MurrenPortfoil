@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="w-full bg-background text-foreground overflow-hidden">
+    <main className="w-full bg-white text-black overflow-hidden">
       
       {/* BANDA 1: Hero */}
       <AboutHero />
@@ -23,7 +23,7 @@ export default function AboutPage() {
       <AboutHistoria />
 
       {/* BANDA 2: Valores y Estadísticas */}
-      <section className="w-full border-b border-foreground/10">
+      <section className="w-full border-b border-neutral-200">
         <div className="flex flex-col lg:grid lg:grid-cols-[60%_40%]">
           <AboutValores />
           <AboutStats />
@@ -42,3 +42,4 @@ export default function AboutPage() {
     </main>
   )
 }
+

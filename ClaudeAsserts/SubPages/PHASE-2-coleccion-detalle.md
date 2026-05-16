@@ -80,7 +80,7 @@ export type FiltroState = {
 ### Fase 2.2 — Hero de la colección
 - [ ] Componente `ColeccionHero.tsx`
 - [ ] Imagen de fondo fullwidth con overlay oscuro
-- [ ] Sobre la imagen: temporada (ej. "SS24"), nombre grande (ej. "URBAN FLOW"), descripción
+- [ ] Sobre la imagen: temporada (ej. "SS24"), nombre grande (ej. "MURREN"), descripción
 - [ ] Texto alineado abajo-izquierda sobre la imagen
 
 ### Fase 2.3 — Barra de filtros

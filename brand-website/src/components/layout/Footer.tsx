@@ -4,7 +4,7 @@ import { InstagramLogo, TiktokLogo, XLogo, ArrowRight } from '@phosphor-icons/re
 import { footerCategories, footerInformation, socialLinks } from '@/lib/data';
 import ThemeSwitcher from './ThemeSwitcher';
 import Image from 'next/image';
-import logo from '@/assets/logo.svg';
+import logo from '@/assets/LogoUnitono.svg';
 
 export default function Footer() {
   const renderSocialIcon = (platform: string) => {
@@ -28,8 +28,8 @@ export default function Footer() {
         {/* Newsletter / Brand Column */}
         <div className="lg:col-span-2 flex flex-col justify-between">
           <div>
-            <div className="relative w-24 h-40 mb-6">
-              <Image src={logo} alt="Murren Logo" fill className="object-contain object-left" />
+            <div className="relative w-[200px] h-[400px] mb-6">
+              <Image src={logo} alt="Murren Logo" fill className="object-contain object-left brightness-0 invert" />
             </div>
             <p className="text-sm font-medium tracking-widest text-background/60 uppercase mb-8 max-w-sm">
               ÚNETE AL FLUJO. RECIBE ACCESO ANTICIPADO A DROPS EXCLUSIVOS Y EVENTOS SECRETOS.

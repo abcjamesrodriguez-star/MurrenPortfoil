@@ -10,12 +10,12 @@ export default function AboutHero() {
   const { hero } = aboutData
 
   return (
-    <section className="relative w-full border-b border-foreground/10">
+    <section className="relative w-full border-b border-neutral-200">
       {/* Wrapper principal que define el grid, colapsa en mobile a una sola columna */}
       <div className="flex flex-col lg:grid lg:grid-cols-[30%_40%_30%]">
         
         {/* COLUMNA IZQUIERDA: Título y texto */}
-        <div className="p-6 lg:p-8 flex flex-col justify-center relative border-b lg:border-b-0 lg:border-r border-foreground/10">
+        <div className="p-6 lg:p-8 flex flex-col justify-center relative border-b lg:border-b-0 lg:border-r border-neutral-200">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -31,7 +31,7 @@ export default function AboutHero() {
           >
             <motion.span 
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              className="text-xs font-bold tracking-widest uppercase text-foreground/50 mb-8 block"
+              className="text-xs font-bold tracking-widest uppercase text-neutral-500 mb-8 block"
             >
               {hero.eyebrow}
             </motion.span>
@@ -47,7 +47,7 @@ export default function AboutHero() {
 
             <motion.p 
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              className="text-sm text-foreground/60 max-w-[280px] leading-relaxed mb-12"
+              className="text-sm text-neutral-500 max-w-[280px] leading-relaxed mb-12"
             >
               {hero.descripcion}
             </motion.p>
@@ -55,7 +55,7 @@ export default function AboutHero() {
             <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
               <Link 
                 href={hero.linkManifiesto}
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-foreground hover:opacity-60 transition-colors border-b border-foreground hover:border-foreground/50 pb-1 w-max group"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-black hover:opacity-60 transition-colors border-b border-black hover:border-neutral-400 pb-1 w-max group"
               >
                 VER MANIFIESTO 
                 <span className="transform group-hover:translate-x-1 transition-transform">
@@ -67,7 +67,7 @@ export default function AboutHero() {
         </div>
 
         {/* COLUMNA CENTRAL: Imagen */}
-        <div className="flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-foreground/10 p-6 lg:p-12">
+        <div className="flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-neutral-200 p-6 lg:p-12">
           <div className="relative w-full aspect-video">
             <Image 
               src={hero.imagenPrincipal} 
@@ -82,7 +82,7 @@ export default function AboutHero() {
 
         {/* COLUMNA DERECHA: Historia */}
         <div className="p-6 lg:p-8 flex flex-col relative overflow-hidden">
-          <span className="text-xs font-bold tracking-widest uppercase text-foreground/50 mb-6 block">
+          <span className="text-xs font-bold tracking-widest uppercase text-neutral-500 mb-6 block">
             {hero.historia.eyebrow}
           </span>
 
@@ -97,7 +97,7 @@ export default function AboutHero() {
                 transition: { staggerChildren: 0.15, delayChildren: 0.3 }
               }
             }}
-            className="space-y-6 text-sm text-foreground/80 leading-relaxed max-w-[300px] mt-auto lg:mt-0"
+            className="space-y-6 text-sm text-neutral-700 leading-relaxed max-w-[300px] mt-auto lg:mt-0"
           >
             {hero.historia.parrafos.map((parrafo, idx) => (
               <motion.p 
@@ -115,13 +115,13 @@ export default function AboutHero() {
           <motion.div 
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute -bottom-8 -right-8 text-foreground opacity-10 pointer-events-none"
+            className="absolute -bottom-8 -right-8 text-black opacity-10 pointer-events-none"
           >
             <Sparkle size={160} weight="thin" />
           </motion.div>
 
           {/* Tab Lateral */}
-          <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 -rotate-90 text-[10px] tracking-[0.2em] text-foreground/30 whitespace-nowrap select-none pointer-events-none translate-x-1/2">
+          <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 -rotate-90 text-[10px] tracking-[0.2em] text-neutral-300 whitespace-nowrap select-none pointer-events-none translate-x-1/2">
             EL ORIGEN + DECORATIVO
           </div>
         </div>
@@ -130,3 +130,4 @@ export default function AboutHero() {
     </section>
   )
 }
+
