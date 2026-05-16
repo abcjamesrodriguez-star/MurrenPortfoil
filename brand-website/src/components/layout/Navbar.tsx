@@ -62,21 +62,14 @@ export default function Navbar() {
             }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className="relative origin-top bg-black"
+            style={{
+              backgroundImage: 'url(/logo.svg)',
+              backgroundSize: '220%',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+            }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="/logo.svg" 
-              alt="Murren Logo" 
-              style={{ 
-                position: 'absolute',
-                width: '300%', 
-                height: '300%', 
-                objectFit: 'contain',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-              }} 
-            />
+          
           </motion.div>
         </Link>
       </div>
