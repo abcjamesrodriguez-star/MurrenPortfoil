@@ -4,25 +4,17 @@ import { useEffect } from "react"
 import { useProductoContext } from "./ProductoContext"
 import { Ruler, ArrowLeft } from "@phosphor-icons/react"
 import Link from "next/link"
+import { ProductoDetalle } from "@/types"
+import { useCart } from "@/components/cart/CartContext"
 
 type ProductoInfoProps = {
-  nombre: string
-  precio: number
-  descripcion: string
-  coleccion: { slug: string; nombre: string; temporada: string }
-  colores: { nombre: string; hex: string }[]
-  tallas: { valor: string; disponible: boolean }[]
+  producto: ProductoDetalle
 }
 
-export default function ProductoInfo({
-  nombre,
-  precio,
-  descripcion,
-  coleccion,
-  colores,
-  tallas,
-}: ProductoInfoProps) {
+export default function ProductoInfo({ producto }: ProductoInfoProps) {
+  const { nombre, precio, descripcion, coleccionDetalle: coleccion, coloresDetalle: colores, tallasDetalle: tallas } = producto
   const { tallaSeleccionada, setTallaSeleccionada, colorSeleccionado, setColorSeleccionado } = useProductoContext()
+  const { addToCart } = useCart()
 
   useEffect(() => {
     // Set default color if not selected
@@ -33,6 +25,35 @@ export default function ProductoInfo({
 
   const formatPrice = (p: number) =>
     new Intl.NumberFormat("es-CO", { style: "currency", currency: "COP", minimumFractionDigits: 0 }).format(p)
+
+  const handleAddToCart = () => {
+    if (tallas.length > 0 && tallas.some(t => t.valor !== 'Única') && !tallaSeleccionada) {
+      alert("Por favor, selecciona una talla antes de agregar al carrito.")
+      return
+    }
+
+    // Buscar variante coincidente
+    const variant = producto.variantes?.find((v) => {
+      const matchTalla = !tallaSeleccionada || v.talla === tallaSeleccionada;
+      const matchColor = !colorSeleccionado || v.color === colorSeleccionado;
+      return matchTalla && matchColor;
+    }) || producto.variantes?.[0];
+
+    const variantId = variant?.id || producto.id;
+
+    addToCart({
+      id: `${producto.slug}-${colorSeleccionado || 'unico'}-${tallaSeleccionada || 'unica'}`,
+      variantId: variantId,
+      productSlug: producto.slug,
+      productName: producto.nombre,
+      productImage: producto.imagen,
+      selectedColor: colorSeleccionado || 'Único',
+      selectedSize: tallaSeleccionada || 'Única',
+      price: producto.precio,
+      collectionName: coleccion.nombre,
+      category: producto.categoria,
+    }, 1);
+  }
 
   return (
     <div className="flex flex-col max-w-md w-full">
@@ -104,13 +125,68 @@ export default function ProductoInfo({
 
       {/* Acciones */}
       <div className="flex flex-col gap-4">
-        <button className="w-full bg-black text-white py-4 text-sm font-bold uppercase tracking-widest hover:bg-gray-900 transition-colors flex justify-between px-6">
+        <button
+          id="main-add-to-cart-btn"
+          onClick={handleAddToCart}
+          className="w-full bg-black text-white py-4 text-sm font-bold uppercase tracking-widest hover:bg-gray-900 transition-colors flex justify-between px-6"
+        >
           <span>AGREGAR AL CARRITO</span>
           <span>+</span>
         </button>
         <button className="text-xs font-semibold uppercase tracking-widest text-gray-500 hover:text-black transition-colors text-left flex items-center gap-2">
           ♡ AGREGAR A FAVORITOS
         </button>
+      </div>
+
+      {/* Bloque Legal — Políticas Visibles */}
+      <div className="mt-8 pt-6 border-t border-neutral-200 flex flex-col gap-3">
+        {/* Envío gratis */}
+        <div className="flex items-start gap-2.5">
+          <span className="text-black font-mono text-[10px] mt-0.5 shrink-0">//</span>
+          <p className="text-[11px] leading-snug text-neutral-500">
+            <span className="font-bold text-black uppercase tracking-wide">Envío gratis</span>
+            {" "}en compras superiores a $200.000 COP · Despacho en 1–2 días hábiles.{" "}
+            <a href="/envios" className="underline underline-offset-2 hover:text-black transition-colors font-semibold">
+              Ver política de envíos →
+            </a>
+          </p>
+        </div>
+
+        {/* Cambios y devoluciones */}
+        <div className="flex items-start gap-2.5">
+          <span className="text-black font-mono text-[10px] mt-0.5 shrink-0">//</span>
+          <p className="text-[11px] leading-snug text-neutral-500">
+            <span className="font-bold text-black uppercase tracking-wide">Cambios y devoluciones</span>
+            {" "}hasta 10 días hábiles desde la entrega (Ley 1480 de 2011).{" "}
+            <a href="/cambios" className="underline underline-offset-2 hover:text-black transition-colors font-semibold">
+              Ver política →
+            </a>
+          </p>
+        </div>
+
+        {/* Pago seguro */}
+        <div className="flex items-start gap-2.5">
+          <span className="text-black font-mono text-[10px] mt-0.5 shrink-0">//</span>
+          <p className="text-[11px] leading-snug text-neutral-500">
+            <span className="font-bold text-black uppercase tracking-wide">Pago seguro</span>
+            {" "}procesado por Shopify. No almacenamos datos de tarjetas.{" "}
+            <a href="/privacidad" className="underline underline-offset-2 hover:text-black transition-colors font-semibold">
+              Política de privacidad →
+            </a>
+          </p>
+        </div>
+
+        {/* Garantía */}
+        <div className="flex items-start gap-2.5">
+          <span className="text-black font-mono text-[10px] mt-0.5 shrink-0">//</span>
+          <p className="text-[11px] leading-snug text-neutral-500">
+            <span className="font-bold text-black uppercase tracking-wide">Garantía de fábrica</span>
+            {" "}en defectos de manufactura. Escríbenos a{" "}
+            <a href="mailto:murrenbygeral@gmail.com" className="underline underline-offset-2 hover:text-black transition-colors font-semibold">
+              murrenbygeral@gmail.com
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   )

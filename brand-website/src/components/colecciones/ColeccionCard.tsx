@@ -4,6 +4,7 @@ import { Plus } from "@phosphor-icons/react"
 import Image from "next/image"
 import Link from "next/link"
 import { Collection } from "@/types"
+import { useState } from "react"
 
 export default function ColeccionCard({
   coleccion,
@@ -12,6 +13,8 @@ export default function ColeccionCard({
   coleccion: Collection
   altaFila: boolean
 }) {
+  const [imgSrc, setImgSrc] = useState(coleccion.imagen || '/images/placeholder.png')
+
   return (
     <Link
       href={`/colecciones/${coleccion.slug}`}
@@ -31,12 +34,13 @@ export default function ColeccionCard({
       {/* Imagen */}
       <div className="relative flex-1 overflow-hidden">
         <Image
-          src={coleccion.imagen}
+          src={imgSrc}
           alt={coleccion.nombre}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority={altaFila}
           className="object-cover transition-transform duration-500 group-hover:scale-[1.02] grayscale"
+          onError={() => setImgSrc('/images/placeholder.png')}
         />
       </div>
 

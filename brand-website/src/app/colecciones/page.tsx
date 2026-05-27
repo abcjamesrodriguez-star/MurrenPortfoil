@@ -1,7 +1,8 @@
 import { Metadata } from "next"
-import ColeccionesHero from "@/components/colecciones/ColeccionesHero"
+import { getCollections } from "@/lib/api"
 import ColeccionesLayout from "@/components/colecciones/ColeccionesLayout"
-import { getCollections, getColeccionActual } from "@/lib/api"
+
+export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
   title: "Colecciones — MURREN",
@@ -10,12 +11,11 @@ export const metadata: Metadata = {
 
 export default async function ColeccionesPage() {
   const colecciones = await getCollections()
-  const actual = getColeccionActual(colecciones)
 
   return (
-    <main className="w-full bg-white text-black">
-      <ColeccionesHero actual={actual} />
+    // -mt-24 neutraliza el pt-24 del <main> raíz para que colecciones ocupe el 100% de la pantalla menos el navbar
+    <div className="lg:-mt-24 lg:pt-24 lg:h-screen lg:overflow-hidden bg-white text-black">
       <ColeccionesLayout colecciones={colecciones} />
-    </main>
+    </div>
   )
 }

@@ -17,7 +17,7 @@ export default function ColeccionesSidebar({
   const [ordenAbierto, setOrdenAbierto] = useState(false)
 
   return (
-    <div className="border-r border-neutral-200 p-8 flex flex-col gap-1 bg-white">
+    <div className="border-r border-neutral-200 p-8 flex flex-col gap-1 bg-white lg:h-full lg:overflow-y-auto text-black">
       <p className="text-[10px] tracking-[0.2em] text-neutral-400 font-mono mb-6">
         // FILTRAR
       </p>

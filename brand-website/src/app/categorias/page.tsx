@@ -2,6 +2,9 @@ import { getCategories } from "@/lib/api"
 import CategoriasHero from "@/components/categorias/CategoriasHero"
 import CategoriasGrid from "@/components/categorias/CategoriasGrid"
 
+export const dynamic = "force-dynamic"
+
+
 export const metadata = {
   title: "Categorías | Murren",
   description: "Explora nuestras categorías de productos.",

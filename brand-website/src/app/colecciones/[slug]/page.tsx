@@ -2,6 +2,9 @@ import { notFound } from "next/navigation"
 import { getCollectionBySlug, getProducts, getCollections } from "@/lib/api"
 import ColeccionDetalleView from "@/components/coleccion-detalle/ColeccionDetalleView"
 
+export const dynamic = "force-dynamic"
+
+
 type Props = {
   params: Promise<{ slug: string }>
 }

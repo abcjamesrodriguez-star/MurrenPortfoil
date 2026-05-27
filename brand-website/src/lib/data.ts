@@ -86,11 +86,11 @@ export const footerCategories: FooterLinkGroup = {
 export const footerInformation: FooterLinkGroup = {
   title: 'INFORMACIÓN',
   links: [
-    { label: 'Nosotros', href: '/nosotros' },
+    { label: 'Nosotros', href: '/about' },
     { label: 'Envíos', href: '/envios' },
     { label: 'Cambios & Devoluciones', href: '/cambios' },
     { label: 'Términos & Condiciones', href: '/terminos' },
-    { label: 'Preguntas Frecuentes', href: '/faq' },
+    { label: 'Política de Privacidad', href: '/privacidad' },
   ],
 };
 

@@ -2,13 +2,19 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { MagnifyingGlass, User, ShoppingCart, CaretDown } from '@phosphor-icons/react';
 import { navigationLinks } from '@/lib/data';
 import { Category } from '@/types';
+import { useCart } from "@/components/cart/CartContext";
 
 export default function Navbar({ categories = [] }: { categories?: Category[] }) {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const { openCart, cartItems } = useCart();
+
+  const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -29,12 +35,15 @@ export default function Navbar({ categories = [] }: { categories?: Category[] })
     return link;
   });
 
+  const isHome = pathname === '/';
+  const isScrolledOrNotHome = scrolled || !isHome;
+
   return (
     <motion.nav
       initial={{ backgroundColor: 'rgba(0,0,0,0)', borderColor: 'rgba(0,0,0,0)', top: 32 }}
       animate={{ 
-        backgroundColor: scrolled ? 'var(--background)' : 'rgba(0,0,0,0)',
-        borderColor: scrolled ? 'rgba(0,0,0,0.1)' : 'rgba(0,0,0,0)',
+        backgroundColor: isScrolledOrNotHome ? 'rgba(10, 10, 10, 0.96)' : 'rgba(0,0,0,0)',
+        borderColor: isScrolledOrNotHome ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0,0,0,0)',
         top: scrolled ? 0 : 32
       }}
       transition={{ duration: 0.3 }}
@@ -42,7 +51,7 @@ export default function Navbar({ categories = [] }: { categories?: Category[] })
       style={{ borderBottomWidth: '1px' }}
     >
       {/* Left Links */}
-      <div className="hidden md:flex flex-1 items-center space-x-8 text-sm font-medium tracking-widest uppercase">
+      <div className="hidden md:flex flex-1 items-center space-x-8 text-sm font-medium tracking-widest uppercase text-white">
         {finalLinks.map((link) => (
           <div key={link.label} className="relative z-[60] group flex items-center gap-1 cursor-pointer">
             <Link href={link.href} className="hover:opacity-70 transition-opacity">
@@ -89,16 +98,24 @@ export default function Navbar({ categories = [] }: { categories?: Category[] })
       </div>
 
       {/* Right Icons */}
-      <div className="flex flex-1 items-center justify-end space-x-6">
+      <div className="flex flex-1 items-center justify-end space-x-6 text-white">
         <button className="hover:opacity-70 transition-opacity" aria-label="Search">
           <MagnifyingGlass size={24} weight="regular" />
         </button>
         <button className="hover:opacity-70 transition-opacity hidden sm:block" aria-label="User profile">
           <User size={24} weight="regular" />
         </button>
-        <button className="hover:opacity-70 transition-opacity flex items-center border border-foreground px-3 py-1.5" aria-label="Shopping Cart">
+        <button onClick={openCart} className="hover:opacity-70 transition-opacity flex items-center border border-white/20 px-3 py-1.5 text-white" aria-label="Shopping Cart">
           <ShoppingCart size={20} weight="regular" className="mr-2" />
-          <span className="text-sm font-medium">(0)</span>
+          <motion.span
+            key={totalItems}
+            initial={{ scale: 0.7, opacity: 0.6 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 350, damping: 12 }}
+            className="text-sm font-medium"
+          >
+            ({totalItems})
+          </motion.span>
         </button>
       </div>
     </motion.nav>

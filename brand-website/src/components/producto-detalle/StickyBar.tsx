@@ -5,20 +5,21 @@ import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { CaretDown } from "@phosphor-icons/react"
 import { useProductoContext } from "./ProductoContext"
+import { ProductoDetalle } from "@/types"
+import { useCart } from "@/components/cart/CartContext"
 
 type StickyBarProps = {
-  nombre: string
-  precio: number
-  imagen: string
-  tallas: { valor: string; disponible: boolean }[]
+  producto: ProductoDetalle
   // Un ID para observar el botón principal y saber cuándo mostrar el sticky bar
   mainButtonId?: string 
 }
 
-export default function StickyBar({ nombre, precio, imagen, tallas, mainButtonId = "main-add-to-cart" }: StickyBarProps) {
+export default function StickyBar({ producto, mainButtonId = "main-add-to-cart" }: StickyBarProps) {
+  const { nombre, precio, imagen, tallasDetalle: tallas } = producto
   const [isVisible, setIsVisible] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
-  const { tallaSeleccionada, setTallaSeleccionada } = useProductoContext()
+  const { tallaSeleccionada, setTallaSeleccionada, colorSeleccionado } = useProductoContext()
+  const { addToCart } = useCart()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,6 +42,36 @@ export default function StickyBar({ nombre, precio, imagen, tallas, mainButtonId
 
   const formatPrice = (p: number) =>
     new Intl.NumberFormat("es-CO", { style: "currency", currency: "COP", minimumFractionDigits: 0 }).format(p)
+
+  const handleAddToCart = () => {
+    if (tallas.length > 0 && tallas.some(t => t.valor !== 'Única') && !tallaSeleccionada) {
+      alert("Por favor, selecciona una talla antes de agregar al carrito.")
+      setDropdownOpen(true)
+      return
+    }
+
+    // Buscar variante coincidente
+    const variant = producto.variantes?.find((v) => {
+      const matchTalla = !tallaSeleccionada || v.talla === tallaSeleccionada;
+      const matchColor = !colorSeleccionado || v.color === colorSeleccionado;
+      return matchTalla && matchColor;
+    }) || producto.variantes?.[0];
+
+    const variantId = variant?.id || producto.id;
+
+    addToCart({
+      id: `${producto.slug}-${colorSeleccionado || 'unico'}-${tallaSeleccionada || 'unica'}`,
+      variantId: variantId,
+      productSlug: producto.slug,
+      productName: producto.nombre,
+      productImage: producto.imagen,
+      selectedColor: colorSeleccionado || 'Único',
+      selectedSize: tallaSeleccionada || 'Única',
+      price: producto.precio,
+      collectionName: producto.coleccionDetalle?.nombre,
+      category: producto.categoria,
+    }, 1);
+  }
 
   return (
     <AnimatePresence>
@@ -111,7 +142,10 @@ export default function StickyBar({ nombre, precio, imagen, tallas, mainButtonId
               </div>
 
               {/* Botón Compra */}
-              <button className="bg-black text-white px-6 md:px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-gray-900 transition-colors whitespace-nowrap">
+              <button
+                onClick={handleAddToCart}
+                className="bg-black text-white px-6 md:px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-gray-900 transition-colors whitespace-nowrap"
+              >
                 AGREGAR <span className="hidden sm:inline">AL CARRITO</span> +
               </button>
             </div>

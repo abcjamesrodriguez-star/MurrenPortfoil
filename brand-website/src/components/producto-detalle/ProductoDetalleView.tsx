@@ -39,14 +39,7 @@ export default function ProductoDetalleView({ producto, relacionados }: Producto
             
             <div className="w-full lg:w-[45%] pt-4 lg:pt-0 sticky top-24 h-fit">
               <div id="info-section">
-                <ProductoInfo 
-                  nombre={producto.nombre}
-                  precio={producto.precio}
-                  descripcion={producto.descripcion}
-                  coleccion={producto.coleccionDetalle}
-                  colores={producto.coloresDetalle}
-                  tallas={producto.tallasDetalle}
-                />
+                <ProductoInfo producto={producto} />
                 <div id="main-add-to-cart" className="h-1 invisible" /> {/* Elemento de referencia para el StickyBar */}
               </div>
             </div>
@@ -80,10 +73,7 @@ export default function ProductoDetalleView({ producto, relacionados }: Producto
 
         {/* Sticky Bottom Bar */}
         <StickyBar 
-          nombre={producto.nombre}
-          precio={producto.precio}
-          imagen={producto.imagen}
-          tallas={producto.tallasDetalle}
+          producto={producto}
           mainButtonId="main-add-to-cart"
         />
       </div>

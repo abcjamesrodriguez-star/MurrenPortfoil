@@ -45,6 +45,26 @@ export type ProductoDetalle = Product & {
   composicion: string
   imagenesDetalle: string[]
   imagenesVisto: string[]
+  variantes?: {
+    id: string
+    talla: string
+    color: string
+    disponible: boolean
+  }[]
+}
+
+export type CartItem = {
+  id: string              // ID compuesto único: slug-color-size
+  variantId: string       // GID real de Shopify para checkout
+  productSlug: string
+  productName: string
+  productImage: string
+  selectedColor: string
+  selectedSize: string
+  quantity: number
+  price: number
+  collectionName?: string
+  category?: string
 }
 
 export type Collection = {

@@ -22,7 +22,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-foreground text-background pt-12 pb-6 px-6 md:px-12 lg:px-24">
+    <footer id="site-footer" className="w-full bg-foreground text-background pt-12 pb-6 px-6 md:px-12 lg:px-24">
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6 mb-12">
         
         {/* Newsletter / Brand Column */}

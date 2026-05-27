@@ -4,8 +4,11 @@ import ColeccionCard from "./ColeccionCard"
 import { Collection } from "@/types"
 
 export default function ColeccionesGrid({ colecciones }: { colecciones: Collection[] }) {
-  const fila1 = colecciones.slice(0, 3)
-  const fila2 = colecciones.slice(3, 6)
+  // Dividir colecciones en filas de 3
+  const chunks: Collection[][] = []
+  for (let i = 0; i < colecciones.length; i += 3) {
+    chunks.push(colecciones.slice(i, i + 3))
+  }
 
   return (
     <div className="bg-white text-black">
@@ -18,21 +21,27 @@ export default function ColeccionesGrid({ colecciones }: { colecciones: Collecti
           transition={{ duration: 0.25 }}
           className="flex flex-col"
         >
-          {/* Fila 1 — asimétrica */}
-          <div className="flex flex-col md:grid md:grid-cols-[1fr_1fr_260px] border-b border-neutral-200 divide-y md:divide-y-0 md:divide-x divide-neutral-200">
-            {fila1.map((c, i) => (
-              <ColeccionCard key={c.id} coleccion={c} altaFila={true} />
-            ))}
-          </div>
-
-          {/* Fila 2 — simétrica */}
-          {fila2.length > 0 && (
-            <div className="flex flex-col md:grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-neutral-200">
-              {fila2.map((c) => (
-                <ColeccionCard key={c.id} coleccion={c} altaFila={false} />
-              ))}
-            </div>
-          )}
+          {chunks.map((fila, index) => {
+            const esPrimeraFila = index === 0
+            return (
+              <div 
+                key={index} 
+                className={`flex flex-col md:grid ${
+                  esPrimeraFila 
+                    ? "md:grid-cols-[1fr_1fr_260px]" 
+                    : "md:grid-cols-3"
+                } border-b border-neutral-200 divide-y md:divide-y-0 md:divide-x divide-neutral-200`}
+              >
+                {fila.map((c) => (
+                  <ColeccionCard 
+                    key={c.id} 
+                    coleccion={c} 
+                    altaFila={esPrimeraFila} 
+                  />
+                ))}
+              </div>
+            )
+          })}
         </motion.div>
       </AnimatePresence>
     </div>

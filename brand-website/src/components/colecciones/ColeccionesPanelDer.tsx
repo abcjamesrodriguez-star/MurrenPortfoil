@@ -11,7 +11,7 @@ export default function ColeccionesPanelDer({
   const destacada = colecciones.find((c) => c.tags.includes("DESTACADA") && !c.estaActual)
 
   return (
-    <div className="border-l border-neutral-200 flex flex-col divide-y divide-neutral-200 bg-white">
+    <div className="border-l border-neutral-200 flex flex-col divide-y divide-neutral-200 bg-white lg:h-full lg:overflow-y-auto">
 
       {/* Bloque 1 — Colección actual */}
       {actual && (
@@ -62,7 +62,7 @@ export default function ColeccionesPanelDer({
           PRÓXIMAMENTE
         </p>
         <p className="font-black text-3xl uppercase leading-none mb-4">
-          SUMMER 2025
+          VERANO 2026
         </p>
         <p className="text-xs text-neutral-500 leading-relaxed mb-4">
           Mantente al tanto de lo que viene.<br />
