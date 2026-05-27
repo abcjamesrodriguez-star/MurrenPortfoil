@@ -7,6 +7,8 @@ type ProductoContextType = {
   setTallaSeleccionada: (talla: string | null) => void
   colorSeleccionado: string | null
   setColorSeleccionado: (color: string | null) => void
+  isModalOpen: boolean
+  setIsModalOpen: (open: boolean) => void
 }
 
 const ProductoContext = createContext<ProductoContextType | undefined>(undefined)
@@ -14,6 +16,7 @@ const ProductoContext = createContext<ProductoContextType | undefined>(undefined
 export function ProductoProvider({ children }: { children: ReactNode }) {
   const [tallaSeleccionada, setTallaSeleccionada] = useState<string | null>(null)
   const [colorSeleccionado, setColorSeleccionado] = useState<string | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
     <ProductoContext.Provider
@@ -22,6 +25,8 @@ export function ProductoProvider({ children }: { children: ReactNode }) {
         setTallaSeleccionada,
         colorSeleccionado,
         setColorSeleccionado,
+        isModalOpen,
+        setIsModalOpen,
       }}
     >
       {children}

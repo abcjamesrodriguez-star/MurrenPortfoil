@@ -11,6 +11,7 @@ import ColeccionBanner from "./ColeccionBanner"
 import VistoEn from "./VistoEn"
 import ProductosRelacionados from "./ProductosRelacionados"
 import StickyBar from "./StickyBar"
+import SelectionModal from "./SelectionModal"
 
 type ProductoDetalleViewProps = {
   producto: ProductoDetalle
@@ -76,6 +77,9 @@ export default function ProductoDetalleView({ producto, relacionados }: Producto
           producto={producto}
           mainButtonId="main-add-to-cart"
         />
+
+        {/* Custom Selection Modal */}
+        <SelectionModal producto={producto} />
       </div>
     </ProductoProvider>
   )

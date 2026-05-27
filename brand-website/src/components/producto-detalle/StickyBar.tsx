@@ -18,7 +18,7 @@ export default function StickyBar({ producto, mainButtonId = "main-add-to-cart" 
   const { nombre, precio, imagen, tallasDetalle: tallas } = producto
   const [isVisible, setIsVisible] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
-  const { tallaSeleccionada, setTallaSeleccionada, colorSeleccionado } = useProductoContext()
+  const { tallaSeleccionada, setTallaSeleccionada, colorSeleccionado, setIsModalOpen } = useProductoContext()
   const { addToCart } = useCart()
 
   useEffect(() => {
@@ -45,8 +45,7 @@ export default function StickyBar({ producto, mainButtonId = "main-add-to-cart" 
 
   const handleAddToCart = () => {
     if (tallas.length > 0 && tallas.some(t => t.valor !== 'Única') && !tallaSeleccionada) {
-      alert("Por favor, selecciona una talla antes de agregar al carrito.")
-      setDropdownOpen(true)
+      setIsModalOpen(true)
       return
     }
 

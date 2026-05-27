@@ -13,7 +13,7 @@ type ProductoInfoProps = {
 
 export default function ProductoInfo({ producto }: ProductoInfoProps) {
   const { nombre, precio, descripcion, coleccionDetalle: coleccion, coloresDetalle: colores, tallasDetalle: tallas } = producto
-  const { tallaSeleccionada, setTallaSeleccionada, colorSeleccionado, setColorSeleccionado } = useProductoContext()
+  const { tallaSeleccionada, setTallaSeleccionada, colorSeleccionado, setColorSeleccionado, setIsModalOpen } = useProductoContext()
   const { addToCart } = useCart()
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function ProductoInfo({ producto }: ProductoInfoProps) {
 
   const handleAddToCart = () => {
     if (tallas.length > 0 && tallas.some(t => t.valor !== 'Única') && !tallaSeleccionada) {
-      alert("Por favor, selecciona una talla antes de agregar al carrito.")
+      setIsModalOpen(true)
       return
     }
 
