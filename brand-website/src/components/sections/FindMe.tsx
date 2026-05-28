@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { MapPin, InstagramLogo, TiktokLogo, XLogo } from '@phosphor-icons/react';
+import { MapPin, InstagramLogo, TiktokLogo, XLogo, PinterestLogo } from '@phosphor-icons/react';
 import { locationsData, socialLinks } from '@/lib/data';
 
 export default function FindMe() {
@@ -16,6 +16,8 @@ export default function FindMe() {
       case "X":
       case "TWITTER":
         return <XLogo size={24} weight="regular" />;
+      case "PINTEREST":
+        return <PinterestLogo size={24} weight="regular" />;
       default:
         return <InstagramLogo size={24} weight="regular" />; // Fallback icon
     }

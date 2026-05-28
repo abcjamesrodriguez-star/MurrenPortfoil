@@ -95,8 +95,7 @@ export const footerInformation: FooterLinkGroup = {
 };
 
 export const socialLinks: SocialLink[] = [
-  { platform: 'Instagram', href: 'https://instagram.com', icon: 'instagram' },
-  { platform: 'TikTok', href: 'https://tiktok.com', icon: 'tiktok' },
-  { platform: 'YouTube', href: 'https://youtube.com', icon: 'youtube' },
-  { platform: 'Pinterest', href: 'https://pinterest.com', icon: 'pinterest' },
+  { platform: 'Instagram', href: 'https://www.instagram.com/murren_co/', icon: 'instagram' },
+  { platform: 'TikTok', href: 'https://www.tiktok.com/@murren_co', icon: 'tiktok' },
+  { platform: 'Pinterest', href: 'https://co.pinterest.com/murren_co/', icon: 'pinterest' },
 ];
