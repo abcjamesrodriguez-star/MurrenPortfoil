@@ -84,6 +84,15 @@ export default function EnviosPage() {
                 <p className="bg-neutral-50 p-4 border-l border-black">
                   Los tiempos pueden variar según la ciudad de destino, novedades logísticas de la transportadora o temporadas de alta demanda.
                 </p>
+                <div className="bg-black text-white p-4 flex items-start gap-3">
+                  <span className="text-lg shrink-0">🚚</span>
+                  <div>
+                    <p className="font-bold uppercase tracking-widest text-sm mb-1">ENVÍO GRATIS</p>
+                    <p className="text-neutral-300 text-xs leading-relaxed">
+                      En compras superiores a <strong className="text-white">$200.000 COP</strong> el envío es completamente gratis a cualquier parte de Colombia.
+                    </p>
+                  </div>
+                </div>
               </div>
             </section>
 

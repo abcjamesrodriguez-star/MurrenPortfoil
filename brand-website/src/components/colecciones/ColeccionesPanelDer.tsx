@@ -55,27 +55,6 @@ export default function ColeccionesPanelDer({
           <div className="w-6 h-px bg-neutral-300 mt-2" />
         </div>
       )}
-
-      {/* Bloque 3 — Próximamente */}
-      <div className="p-6 flex-1 flex flex-col justify-center bg-neutral-50">
-        <p className="text-[10px] tracking-[0.2em] text-neutral-400 uppercase mb-2">
-          PRÓXIMAMENTE
-        </p>
-        <p className="font-black text-3xl uppercase leading-none mb-4">
-          VERANO 2026
-        </p>
-        <p className="text-xs text-neutral-500 leading-relaxed mb-4">
-          Mantente al tanto de lo que viene.<br />
-          Algo diferente está por llegar.
-        </p>
-        <Link
-          href="#notificar"
-          className="inline-flex items-center gap-2 border border-neutral-900 text-black text-xs px-4 py-2 hover:bg-neutral-900 hover:text-white transition-colors self-start"
-        >
-          NOTIFICARME <ArrowRight size={14} />
-        </Link>
-      </div>
-
     </div>
   )
 }

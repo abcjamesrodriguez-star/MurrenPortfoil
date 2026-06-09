@@ -21,7 +21,7 @@ export default function AboutValores() {
   return (
     <div className="relative w-full border-r border-neutral-200">
       {/* Tab Lateral Izquierdo */}
-      <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 rotate-90 text-[10px] tracking-[0.2em] text-neutral-300 whitespace-nowrap select-none pointer-events-none -translate-x-1/2 z-10">
+      <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 rotate-90 text-[10px] tracking-[0.2em] text-neutral-500 whitespace-nowrap select-none pointer-events-none -translate-x-1/2 z-10">
         VALORES + IMÁGENES
       </div>
 
@@ -54,7 +54,7 @@ export default function AboutValores() {
 
         {/* Lista de Valores */}
         <div className="p-6 lg:p-8 flex flex-col justify-center bg-white">
-          <span className="text-xs font-bold tracking-widest uppercase text-neutral-500 mb-6 block">
+          <span className="text-xs font-bold tracking-widest uppercase text-neutral-700 mb-6 block">
             // NUESTROS VALORES
           </span>
 
@@ -81,7 +81,7 @@ export default function AboutValores() {
                   <h4 className="text-sm font-bold uppercase tracking-widest text-black mb-2">
                     {valor.titulo}
                   </h4>
-                  <p className="text-xs text-neutral-500 leading-relaxed">
+                  <p className="text-xs text-neutral-700 leading-relaxed">
                     {valor.descripcion}
                   </p>
                 </div>

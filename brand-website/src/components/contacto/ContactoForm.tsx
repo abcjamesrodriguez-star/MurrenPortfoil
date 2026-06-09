@@ -6,13 +6,34 @@ import { ArrowRight } from "@phosphor-icons/react"
 export default function ContactoForm() {
   const [enviado, setEnviado] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Simular envío
-    setTimeout(() => {
-      setEnviado(true)
-      setTimeout(() => setEnviado(false), 5000)
-    }, 1000)
+    
+    const formData = new FormData(e.currentTarget)
+    const nombre = formData.get("nombre") as string
+    const email = formData.get("email") as string
+    const asuntoValue = formData.get("asunto") as string
+    const mensaje = formData.get("mensaje") as string
+
+    const subjectLabels: Record<string, string> = {
+      general: "Consulta General",
+      pedido: "Estado de mi Pedido",
+      devolucion: "Cambios y Devoluciones",
+      colaboracion: "Colaboraciones / PR"
+    }
+    const textoAsunto = subjectLabels[asuntoValue] || asuntoValue
+
+    // Construir el mensaje estructurado de WhatsApp de forma amigable con emojis
+    const messageText = `¡Hola, equipo Mürren! 👋\nQuiero ponerme en contacto con ustedes. Aquí les comparto mis datos:\n\n👤 *Nombre:* ${nombre}\n✉️ *Email:* ${email}\n📌 *Asunto:* ${textoAsunto}\n\n💬 *Mensaje:*\n${mensaje}`
+    const encodedText = encodeURIComponent(messageText)
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=573017581950&text=${encodedText}`
+
+    // Abrir WhatsApp en una nueva pestaña
+    window.open(whatsappUrl, "_blank")
+
+    // Simular estado enviado
+    setEnviado(true)
+    setTimeout(() => setEnviado(false), 5000)
   }
 
   return (
@@ -32,6 +53,7 @@ export default function ContactoForm() {
               <input 
                 type="text" 
                 id="nombre" 
+                name="nombre"
                 required
                 className="w-full border-b border-gray-300 py-3 bg-transparent text-sm md:text-base focus:outline-none focus:border-black transition-colors placeholder:text-gray-400"
                 placeholder="Escribe tu nombre"
@@ -45,6 +67,7 @@ export default function ContactoForm() {
               <input 
                 type="email" 
                 id="email" 
+                name="email"
                 required
                 className="w-full border-b border-gray-300 py-3 bg-transparent text-sm md:text-base focus:outline-none focus:border-black transition-colors placeholder:text-gray-400"
                 placeholder="correo@ejemplo.com"
@@ -59,6 +82,7 @@ export default function ContactoForm() {
             <div className="relative">
               <select 
                 id="asunto"
+                name="asunto"
                 className="w-full border-b border-gray-300 py-3 bg-transparent text-sm md:text-base focus:outline-none focus:border-black transition-colors appearance-none cursor-pointer"
               >
                 <option value="general">Consulta General</option>
@@ -81,6 +105,7 @@ export default function ContactoForm() {
             </label>
             <textarea 
               id="mensaje" 
+              name="mensaje"
               required
               rows={4}
               className="w-full border-b border-gray-300 py-3 bg-transparent text-sm md:text-base focus:outline-none focus:border-black transition-colors placeholder:text-gray-400 resize-none"

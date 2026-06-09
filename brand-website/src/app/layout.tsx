@@ -19,7 +19,7 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "MURREN — Brand Website",
+  title: "MURREN — Sitio Oficial",
   description: "MURREN no es ropa. Es una forma de existir.",
 };
 

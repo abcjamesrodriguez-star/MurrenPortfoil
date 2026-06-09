@@ -24,41 +24,45 @@ export default function Footer() {
   };
 
   return (
-    <footer id="site-footer" className="w-full bg-foreground text-background pt-12 pb-6 px-6 md:px-12 lg:px-24">
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-6 mb-12">
+    <footer id="site-footer" className="w-full bg-foreground text-background pt-16 pb-8 px-6 md:px-12 lg:px-24">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-16 mb-16 items-start">
         
-        {/* Newsletter / Brand Column */}
-        <div className="lg:col-span-2 flex flex-col justify-between">
-          <div>
-            <div className="relative w-[200px] h-[400px] mb-6">
-              <Image src={logo} alt="Murren Logo" fill className="object-contain object-left brightness-0 invert" />
-            </div>
-            <p className="text-sm font-medium tracking-widest text-background/60 uppercase mb-8 max-w-sm">
+        {/* Brand Logo & Contact Column */}
+        <div className="flex flex-col gap-8">
+          <div className="relative w-[180px] h-[360px] md:h-[400px]">
+            <Image src={logo} alt="Murren Logo" fill className="object-contain object-left brightness-0 invert" />
+          </div>
+          <div className="flex flex-col gap-6">
+            <p className="text-sm font-medium tracking-widest text-background/60 uppercase max-w-xs leading-relaxed">
               ÚNETE AL FLUJO. RECIBE ACCESO ANTICIPADO A DROPS EXCLUSIVOS Y EVENTOS SECRETOS.
             </p>
-          </div>
-          
-          <div className="flex w-full max-w-md border-b border-background/30 pb-2">
-            <input 
-              type="email" 
-              placeholder="CORREO ELECTRÓNICO" 
-              className="bg-transparent border-none outline-none text-sm font-medium tracking-widest uppercase flex-1 placeholder:text-background/40 text-background"
-            />
-            <button className="hover:opacity-70 transition-opacity">
-              <ArrowRight size={20} weight="bold" />
-            </button>
+            <a
+              href="https://api.whatsapp.com/send?phone=573017581950"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative overflow-hidden border border-background/30 hover:border-background text-background text-xs font-bold tracking-widest uppercase py-4 px-6 flex items-center justify-center bg-transparent group w-full max-w-[280px] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 mt-2"
+            >
+              <div className="absolute inset-0 bg-background scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100 z-0" />
+              <span className="relative z-10 flex items-center justify-center gap-3 text-background group-hover:text-foreground transition-colors duration-300">
+                HABLEMOS POR WHATSAPP
+                <ArrowRight size={16} weight="bold" className="group-hover:translate-x-1.5 transition-transform duration-300 ease-out" />
+              </span>
+            </a>
           </div>
         </div>
 
         {/* Information Column */}
-        <div className="flex flex-col">
+        <div className="flex flex-col md:pt-4">
           <h3 className="text-xs font-bold tracking-widest uppercase mb-8 text-background/50">
             // {footerInformation.title}
           </h3>
           <ul className="flex flex-col gap-4">
             {footerInformation.links.map((link) => (
               <li key={link.label}>
-                <Link href={link.href} className="text-sm font-bold tracking-widest uppercase hover:opacity-60 transition-opacity">
+                <Link 
+                  href={link.href} 
+                  className="text-sm font-bold tracking-widest uppercase text-background/80 hover:text-background hover:translate-x-2 transition-all duration-300 transform inline-block"
+                >
                   {link.label}
                 </Link>
               </li>
@@ -67,14 +71,17 @@ export default function Footer() {
         </div>
 
         {/* Socials Column */}
-        <div className="flex flex-col">
+        <div className="flex flex-col md:pt-4">
           <h3 className="text-xs font-bold tracking-widest uppercase mb-8 text-background/50">
             // SÍGUENOS
           </h3>
           <ul className="flex flex-col gap-4">
             {socialLinks.map((social) => (
               <li key={social.platform}>
-                <a href={social.href} className="text-sm font-bold tracking-widest uppercase hover:opacity-60 transition-opacity flex items-center gap-2">
+                <a 
+                  href={social.href} 
+                  className="text-sm font-bold tracking-widest uppercase text-background/80 hover:text-background hover:translate-x-2 transition-all duration-300 transform inline-flex items-center gap-2"
+                >
                   {renderSocialIcon(social.platform)} {social.platform}
                 </a>
               </li>

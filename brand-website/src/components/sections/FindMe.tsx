@@ -1,27 +1,11 @@
 "use client";
 
 import React, { useState } from 'react';
-import { MapPin, InstagramLogo, TiktokLogo, XLogo, PinterestLogo } from '@phosphor-icons/react';
-import { locationsData, socialLinks } from '@/lib/data';
+import { MapPin } from '@phosphor-icons/react';
+import { locationsData } from '@/lib/data';
 
 export default function FindMe() {
   const [activeLocId, setActiveLocId] = useState(locationsData[0].id);
-
-  const renderSocialIcon = (platform: string) => {
-    switch (platform.toUpperCase()) {
-      case "INSTAGRAM":
-        return <InstagramLogo size={24} weight="regular" />;
-      case "TIKTOK":
-        return <TiktokLogo size={24} weight="regular" />;
-      case "X":
-      case "TWITTER":
-        return <XLogo size={24} weight="regular" />;
-      case "PINTEREST":
-        return <PinterestLogo size={24} weight="regular" />;
-      default:
-        return <InstagramLogo size={24} weight="regular" />; // Fallback icon
-    }
-  };
 
   const activeLocation = locationsData.find(loc => loc.id === activeLocId) || locationsData[0];
   const mapQuery = encodeURIComponent(`${activeLocation.addressLine1}, ${activeLocation.city}`);
@@ -33,7 +17,7 @@ export default function FindMe() {
       {/* Header */}
       <div className="mb-8 border-b border-foreground/10 pb-4">
         <h2 className="text-sm font-bold tracking-widest uppercase">
-          // FIND ME
+          // ENCUÉNTRAME
         </h2>
       </div>
 
@@ -43,7 +27,7 @@ export default function FindMe() {
         <div className="w-full lg:w-1/2 flex flex-col justify-between">
           <div>
             <h3 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter uppercase mb-12 leading-[0.9]">
-              VISIT OUR<br />FLAGSHIP<br />STORES
+              VISITA NUESTRA<br />TIENDA
             </h3>
             
             <div className="flex flex-col gap-12">
@@ -58,7 +42,7 @@ export default function FindMe() {
                       isActive 
                         ? 'border-foreground opacity-100' 
                         : 'border-foreground/20 opacity-50 hover:opacity-80'
-                    }`}
+                     }`}
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <MapPin size={20} className="text-foreground" weight={isActive ? "fill" : "regular"} />
@@ -77,15 +61,9 @@ export default function FindMe() {
               })}
             </div>
           </div>
-          
-          <div className="mt-16 lg:mt-0">
-            <button className="border border-foreground text-foreground text-xs font-bold tracking-widest uppercase px-8 py-4 hover:bg-foreground/5 transition-colors">
-              VIEW ALL STOCKISTS
-            </button>
-          </div>
         </div>
 
-        {/* Right Column: Visual Map & Socials */}
+        {/* Right Column: Visual Map */}
         <div className="w-full lg:w-1/2 flex flex-col gap-8">
           
           {/* Google Maps Integration */}
@@ -112,25 +90,6 @@ export default function FindMe() {
               >
                 CÓMO LLEGAR
               </a>
-            </div>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex flex-col border-t border-foreground/10 pt-8">
-            <h4 className="text-xs font-bold tracking-widest uppercase text-foreground/50 mb-6">
-              // CONNECT
-            </h4>
-            <div className="flex gap-8">
-              {socialLinks.map((social) => (
-                <a 
-                  key={social.platform} 
-                  href={social.href}
-                  className="flex items-center gap-2 text-foreground hover:opacity-50 transition-opacity"
-                  aria-label={social.platform}
-                >
-                  {renderSocialIcon(social.platform)}
-                </a>
-              ))}
             </div>
           </div>
 

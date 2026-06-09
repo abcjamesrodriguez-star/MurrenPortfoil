@@ -31,14 +31,14 @@ export default function AboutHero() {
           >
             <motion.span 
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              className="text-xs font-bold tracking-widest uppercase text-neutral-500 mb-8 block"
+              className="text-xs font-bold tracking-widest uppercase text-neutral-700 mb-8 block"
             >
               {hero.eyebrow}
             </motion.span>
             
             <motion.h1 
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              className="text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-8"
+              className="text-5xl lg:text-6xl font-bold uppercase tracking-tight leading-[1.1] mb-8"
             >
               {hero.titulo.split("\n").map((line, i) => (
                 <span key={i} className="block">{line}</span>
@@ -47,7 +47,7 @@ export default function AboutHero() {
 
             <motion.p 
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              className="text-sm text-neutral-500 max-w-[280px] leading-relaxed mb-12"
+              className="text-sm text-neutral-700 max-w-[280px] leading-relaxed mb-12"
             >
               {hero.descripcion}
             </motion.p>
@@ -82,7 +82,7 @@ export default function AboutHero() {
 
         {/* COLUMNA DERECHA: Historia */}
         <div className="p-6 lg:p-8 flex flex-col relative overflow-hidden">
-          <span className="text-xs font-bold tracking-widest uppercase text-neutral-500 mb-6 block">
+          <span className="text-xs font-bold tracking-widest uppercase text-neutral-700 mb-6 block">
             {hero.historia.eyebrow}
           </span>
 
@@ -97,7 +97,7 @@ export default function AboutHero() {
                 transition: { staggerChildren: 0.15, delayChildren: 0.3 }
               }
             }}
-            className="space-y-6 text-sm text-neutral-700 leading-relaxed max-w-[300px] mt-auto lg:mt-0"
+            className="space-y-6 text-sm text-neutral-800 leading-relaxed max-w-[300px] mt-auto lg:mt-0"
           >
             {hero.historia.parrafos.map((parrafo, idx) => (
               <motion.p 
@@ -121,7 +121,7 @@ export default function AboutHero() {
           </motion.div>
 
           {/* Tab Lateral */}
-          <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 -rotate-90 text-[10px] tracking-[0.2em] text-neutral-300 whitespace-nowrap select-none pointer-events-none translate-x-1/2">
+          <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 -rotate-90 text-[10px] tracking-[0.2em] text-neutral-500 whitespace-nowrap select-none pointer-events-none translate-x-1/2">
             EL ORIGEN + DECORATIVO
           </div>
         </div>

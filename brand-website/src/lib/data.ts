@@ -13,14 +13,14 @@ export const navigationLinks: NavItem[] = [
       { label: 'Bolsos', href: '/categorias/bolsos' },
     ],
   },
-  { label: 'ABOUT', href: '/about' },
+  { label: 'NOSOTROS', href: '/about' },
   { label: 'CONTACTO', href: '/contacto' },
 ];
 
 export const newsData: NewsItem[] = [
   {
     id: 'news-1',
-    tag: 'NEW DROP',
+    tag: 'NUEVO DROP',
     title: 'ILLUSION CHROME',
     status: 'YA DISPONIBLE',
     image: image1,
@@ -36,7 +36,7 @@ export const newsData: NewsItem[] = [
     id: 'news-3',
     tag: 'COLAB',
     title: 'MIF X UNKNOWN',
-    status: 'COMING SOON',
+    status: 'PRÓXIMAMENTE',
     image: image1,
   },
 ];
@@ -52,22 +52,10 @@ export const collectionData: ProductItem[] = [
 export const locationsData: LocationItem[] = [
   {
     id: 'loc-1',
-    type: 'FLAGSHIP STORE',
-    addressLine1: 'Calle 85 #12-42',
+    type: 'PUNTO DE VENTA',
+    addressLine1: 'Centro comercial Gran San',
+    addressLine2: 'KR 10 # 9-37 LOCAL 2275',
     city: 'Bogotá, Colombia',
-  },
-  {
-    id: 'loc-2',
-    type: 'MIF POP UP',
-    addressLine1: 'Centro Comercial Andino',
-    addressLine2: 'Local 2-45',
-    city: 'Bogotá, Colombia',
-  },
-  {
-    id: 'loc-3',
-    type: 'MIF POINT',
-    addressLine1: 'Calle 50 #70-21',
-    city: 'Medellín, Colombia',
   },
 ];
 

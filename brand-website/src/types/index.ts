@@ -121,6 +121,7 @@ export type NewsItem = {
   title: string
   status: string
   image: string | { src: string } | any
+  permalink?: string
 }
 
 export type ProductItem = {

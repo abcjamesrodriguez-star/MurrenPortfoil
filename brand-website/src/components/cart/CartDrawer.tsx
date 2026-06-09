@@ -8,7 +8,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 
 // Ticker text repeated to enable continuous seamless looping
-const TICKER_TEXT = "✦ DROP 01 / ILUSIÓN CHROME ✦ COMPRA COMPROBADA LEY 1480 ✦ ENVÍO GRATIS DISPONIBLE SOBRE $200.000 COP ✦ DEVOLUCIONES FÁCILES ✦ SUPPORT: MURRENBYGERAL@GMAIL.COM ✦ "
+const TICKER_TEXT = "✦ DROP 01 / ILUSIÓN CHROME ✦ COMPRA COMPROBADA LEY 1480 ✦ ENVÍO GRATIS SUPERANDO LOS $200.000 COP ✦ DEVOLUCIONES FÁCILES ✦ SOPORTE: MURRENBYGERAL@GMAIL.COM ✦ "
 const FULL_TICKER = Array(5).fill(TICKER_TEXT).join("")
 
 export default function CartDrawer() {
@@ -51,7 +51,7 @@ export default function CartDrawer() {
                   <span className="text-[#a855f7]">■</span> TU CARRITO
                 </h2>
                 <span className="font-mono text-[10px] bg-neutral-900 border border-neutral-800 text-[#a855f7] px-2 py-0.5 font-bold">
-                  {cartItems.reduce((acc, item) => acc + item.quantity, 0)} UNITS
+                  {cartItems.reduce((acc, item) => acc + item.quantity, 0)} PRENDAS
                 </span>
               </div>
               
@@ -165,9 +165,9 @@ export default function CartDrawer() {
                               </Link>
                             </div>
                             <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-[9px] font-mono text-neutral-400 uppercase tracking-wider mt-1.5">
-                              <span>COL: {item.selectedColor}</span>
+                              <span>COLOR: {item.selectedColor}</span>
                               <span className="text-neutral-800">|</span>
-                              <span>SZ: {item.selectedSize}</span>
+                              <span>TALLA: {item.selectedSize}</span>
                             </div>
                           </div>
 

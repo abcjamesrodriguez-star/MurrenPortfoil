@@ -4,14 +4,17 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play } from '@phosphor-icons/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import image1 from '@/assets/Mockup.jpeg';
+
+const MotionLink = motion(Link);
 
 export default function Hero() {
   return (
     <section className="relative w-full h-[80vh] min-h-[600px] overflow-hidden bg-background border-b border-foreground/10 flex items-center">
       <Image 
         src={image1} 
-        alt="Hero Background" 
+        alt="Fondo Principal" 
         fill 
         sizes="100vw"
         priority
@@ -42,7 +45,7 @@ export default function Hero() {
           >
             {/* Eyebrow */}
             <p className="text-xs tracking-widest uppercase mb-6 font-medium text-foreground/60">
-              // STREETWEAR THAT<br />DEFIES THE ORDINARY
+              // STREETWEAR QUE<br />DESAFÍA LO ORDINARIO
             </p>
 
             {/* Main Headline */}
@@ -57,12 +60,32 @@ export default function Hero() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-foreground text-background text-xs font-bold tracking-widest uppercase px-8 py-4 flex items-center justify-center gap-3 hover:opacity-90 transition-opacity">
-                SHOP NOW <ArrowRight size={16} weight="bold" />
-              </button>
-              <button className="border border-foreground text-foreground text-xs font-bold tracking-widest uppercase px-8 py-4 flex items-center justify-center gap-3 hover:bg-foreground/5 transition-colors bg-background">
-                <Play size={16} weight="fill" /> WATCH FILM
-              </button>
+              <MotionLink
+                href="/categorias"
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 12 }}
+                className="relative overflow-hidden border border-white text-white text-xs font-bold tracking-widest uppercase px-8 py-4 flex items-center justify-center bg-transparent group"
+              >
+                <div className="absolute inset-0 bg-white scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100 z-0" />
+                <span className="relative z-10 flex items-center justify-center gap-3 text-white group-hover:text-black transition-colors duration-300">
+                  COMPRAR AHORA <ArrowRight size={16} weight="bold" />
+                </span>
+              </MotionLink>
+              <MotionLink
+                href="https://www.youtube.com/watch?v=62OqU61CxLM"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 12 }}
+                className="relative overflow-hidden border border-white text-white text-xs font-bold tracking-widest uppercase px-8 py-4 flex items-center justify-center bg-transparent group"
+              >
+                <div className="absolute inset-0 bg-white scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100 z-0" />
+                <span className="relative z-10 flex items-center justify-center gap-3 text-white group-hover:text-black transition-colors duration-300">
+                  <Play size={16} weight="fill" /> VER FILM
+                </span>
+              </MotionLink>
             </div>
           </motion.div>
         </div>
@@ -79,7 +102,7 @@ export default function Hero() {
         transition={{ duration: 0.7, delay: 0.8 }}
       >
         <span className="text-[10px] tracking-[0.2em] uppercase origin-center -rotate-90 whitespace-nowrap mb-8">
-          SCROLL
+          DESPLAZAR
         </span>
         <div className="w-px h-16 bg-foreground/30 relative">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-foreground" />

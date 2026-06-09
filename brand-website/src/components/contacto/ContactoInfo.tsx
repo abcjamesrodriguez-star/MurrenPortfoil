@@ -8,8 +8,8 @@ export default function ContactoInfo() {
         <span className="text-xs font-bold tracking-widest uppercase text-gray-500 mb-6 block">
           01 // ESTAMOS AQUÍ
         </span>
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tighter leading-[0.9] mb-12">
-          HABLE<br />MOS.
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tight leading-[0.9] mb-12">
+          HABLEMOS.
         </h1>
         
         <p className="text-gray-400 text-sm md:text-base max-w-sm mb-16 leading-relaxed">
@@ -32,8 +32,8 @@ export default function ContactoInfo() {
             <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">
               WHATSAPP / TELÉFONO
             </h3>
-            <a href="tel:+573001234567" className="text-lg md:text-xl font-bold tracking-tight hover:text-gray-300 transition-colors">
-              +57 300 123 4567
+            <a href="https://api.whatsapp.com/send?phone=573017581950" target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl font-bold tracking-tight hover:text-gray-300 transition-colors">
+              +57 301 758 1950
             </a>
             <p className="text-xs text-gray-400 mt-2">Lunes a Viernes, 9AM - 6PM (COT)</p>
           </div>
@@ -41,10 +41,11 @@ export default function ContactoInfo() {
           {/* Bloque 3 */}
           <div>
             <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">
-              ESTUDIO / SHOWROOM
+              PUNTO DE VENTA / SHOWROOM
             </h3>
-            <p className="text-lg md:text-xl font-bold tracking-tight leading-snug max-w-xs">
-              CARRERA 14 #85-68<br />
+            <p className="text-lg md:text-xl font-bold tracking-tight leading-snug max-w-xs uppercase">
+              CENTRO COMERCIAL GRAN SAN<br />
+              KR 10 # 9-37 LOCAL 2275<br />
               BOGOTÁ, COLOMBIA
             </p>
             <p className="text-xs text-gray-400 mt-2">Solo con cita previa.</p>

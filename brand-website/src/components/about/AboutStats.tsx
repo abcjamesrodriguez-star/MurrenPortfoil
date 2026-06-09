@@ -60,7 +60,7 @@ export default function AboutStats() {
   return (
     <div className="relative w-full h-full bg-white flex items-center">
       {/* Tab Lateral Derecho */}
-      <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 -rotate-90 text-[10px] tracking-[0.2em] text-neutral-300 whitespace-nowrap select-none pointer-events-none translate-x-1/2">
+      <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 -rotate-90 text-[10px] tracking-[0.2em] text-neutral-500 whitespace-nowrap select-none pointer-events-none translate-x-1/2">
         STATS
       </div>
 
@@ -76,11 +76,11 @@ export default function AboutStats() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="text-5xl lg:text-7xl font-black uppercase tracking-tighter text-black mb-4"
+                className="text-5xl lg:text-7xl font-bold uppercase tracking-tight text-black mb-4"
               >
                 <AnimatedNumber to={stat.valor} from={from} isSymbol={isSymbol} />
               </motion.div>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-500">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-700">
                 {stat.label}
               </span>
             </div>

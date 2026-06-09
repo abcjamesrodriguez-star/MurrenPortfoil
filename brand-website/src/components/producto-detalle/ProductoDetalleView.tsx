@@ -48,7 +48,7 @@ export default function ProductoDetalleView({ producto, relacionados }: Producto
         </div>
 
         {/* Sección Media: Acordeón e Imágenes Detalle */}
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 py-8 lg:py-16 border-t border-gray-200">
+        <div id="seccion-detalles" className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 py-8 lg:py-16 border-t border-gray-200">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
             <div className="w-full lg:w-[45%] pr-0 lg:pr-8">
               <ProductoAccordion items={accordionItems} />

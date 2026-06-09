@@ -8,9 +8,9 @@ export default function NewsTicker() {
   const messages = [
     "NUEVA COLECCIÓN DISPONIBLE",
     "ENVÍOS GRATIS EN COMPRAS SUPERIORES A $200.000 COP",
-    "STREETWEAR THAT DEFIES THE ORDINARY",
-    "LIMITED EDITION DROPS",
-    "JOIN THE FLOW"
+    "STREETWEAR QUE DESAFÍA LO ORDINARIO",
+    "DROPS DE EDICIÓN LIMITADA",
+    "ÚNETE AL FLUJO"
   ];
   
   // Repetimos los mensajes varias veces para asegurar que llenen el ancho de la pantalla holgadamente

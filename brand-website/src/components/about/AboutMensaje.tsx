@@ -13,10 +13,10 @@ export default function AboutMensaje() {
       <div className="flex flex-col h-full p-6 lg:p-8 lg:pt-12">
         {/* Título: Logo Texto */}
         <div className="mb-8">
-          <span className="text-xl lg:text-2xl font-medium tracking-widest uppercase mb-2 block" style={{ color: 'var(--color-text-inverse-muted)' }}>
+          <span className="text-xl lg:text-2xl font-medium tracking-widest uppercase mb-2 block" style={{ color: 'var(--color-text-inverse)' }}>
             ESTO ES
           </span>
-          <h2 className="text-7xl lg:text-8xl xl:text-[110px] font-black uppercase tracking-tighter leading-[0.8] -ml-1" style={{ fontFamily: 'Impact, sans-serif', transform: 'scaleY(1.1)', transformOrigin: 'left top', color: 'var(--color-text-inverse)' }}>
+          <h2 className="text-7xl lg:text-8xl xl:text-[96px] font-bold uppercase tracking-tight leading-none -ml-1" style={{ color: 'var(--color-text-inverse)' }}>
             MURREN.
           </h2>
         </div>

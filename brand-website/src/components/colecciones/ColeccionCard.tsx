@@ -19,7 +19,7 @@ export default function ColeccionCard({
     <Link
       href={`/colecciones/${coleccion.slug}`}
       className={`group relative flex flex-col border-b border-neutral-200 overflow-hidden bg-white
-        ${altaFila ? "h-[420px]" : "h-[320px]"}`}
+        ${altaFila ? "h-[580px]" : "h-[460px]"}`}
     >
       {/* Top bar: número + ícono + */}
       <div className="flex justify-between items-start p-3 z-10">

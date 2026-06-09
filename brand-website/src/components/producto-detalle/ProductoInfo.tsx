@@ -117,7 +117,12 @@ export default function ProductoInfo({ producto }: ProductoInfoProps) {
             </button>
           ))}
         </div>
-        <button className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-gray-500 hover:text-black transition-colors">
+        <button
+          onClick={() => {
+            document.getElementById('seccion-detalles')?.scrollIntoView({ behavior: 'smooth' })
+          }}
+          className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-gray-500 hover:text-black transition-colors"
+        >
           <Ruler size={16} />
           GUÍA DE TALLAS
         </button>

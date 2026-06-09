@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { MagnifyingGlass, User, ShoppingCart, CaretDown } from '@phosphor-icons/react';
+import { ShoppingCart, CaretDown } from '@phosphor-icons/react';
 import { navigationLinks } from '@/lib/data';
 import { Category } from '@/types';
 import { useCart } from "@/components/cart/CartContext";
@@ -37,17 +37,26 @@ export default function Navbar({ categories = [] }: { categories?: Category[] })
 
   const isHome = pathname === '/';
   const isScrolledOrNotHome = scrolled || !isHome;
+  const showGiantLogo = isHome && !scrolled;
 
   return (
     <motion.nav
-      initial={{ backgroundColor: 'rgba(0,0,0,0)', borderColor: 'rgba(0,0,0,0)', top: 32 }}
+      initial={{ 
+        backgroundColor: 'rgba(0,0,0,0)', 
+        borderColor: 'rgba(0,0,0,0)', 
+        top: 32,
+        paddingTop: '24px',
+        paddingBottom: '24px'
+      }}
       animate={{ 
         backgroundColor: isScrolledOrNotHome ? 'rgba(10, 10, 10, 0.96)' : 'rgba(0,0,0,0)',
         borderColor: isScrolledOrNotHome ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0,0,0,0)',
-        top: scrolled ? 0 : 32
+        top: scrolled ? 0 : 32,
+        paddingTop: scrolled ? '20px' : '24px',
+        paddingBottom: scrolled ? '20px' : '24px'
       }}
       transition={{ duration: 0.3 }}
-      className={`fixed left-0 right-0 z-50 flex items-center justify-between px-6 py-4 border-b`}
+      className={`fixed left-0 right-0 z-50 flex items-center justify-between px-6 border-b`}
       style={{ borderBottomWidth: '1px' }}
     >
       {/* Left Links */}
@@ -76,13 +85,13 @@ export default function Navbar({ categories = [] }: { categories?: Category[] })
       </div>
 
       {/* Center Logo */}
-      <div className="relative flex justify-center shrink-0 w-32 h-12">
+      <div className="relative flex justify-center shrink-0 w-32 h-16">
         <Link href="/" className="absolute left-1/2 -translate-x-1/2 top-0 z-50 flex justify-center">
           <motion.div
             animate={{
-              height: scrolled ? 80 : 300,
-              width: scrolled ? 80 : 160,
-              y: scrolled ? 0 : -30
+              height: showGiantLogo ? 300 : 80,
+              width: showGiantLogo ? 160 : 80,
+              y: showGiantLogo ? -30 : -8
             }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className="relative origin-top"
@@ -99,13 +108,7 @@ export default function Navbar({ categories = [] }: { categories?: Category[] })
 
       {/* Right Icons */}
       <div className="flex flex-1 items-center justify-end space-x-6 text-white">
-        <button className="hover:opacity-70 transition-opacity" aria-label="Search">
-          <MagnifyingGlass size={24} weight="regular" />
-        </button>
-        <button className="hover:opacity-70 transition-opacity hidden sm:block" aria-label="User profile">
-          <User size={24} weight="regular" />
-        </button>
-        <button onClick={openCart} className="hover:opacity-70 transition-opacity flex items-center border border-white/20 px-3 py-1.5 text-white" aria-label="Shopping Cart">
+        <button onClick={openCart} className="hover:opacity-70 transition-opacity flex items-center border border-white/20 px-3 py-1.5 text-white" aria-label="Carrito de Compras">
           <ShoppingCart size={20} weight="regular" className="mr-2" />
           <motion.span
             key={totalItems}

@@ -28,9 +28,9 @@ export default function Collection({ collections }: { collections: CollectionTyp
       {/* Header */}
       <div className="flex justify-between items-end mb-12 border-b border-foreground/10 pb-4">
         <h2 className="text-sm font-bold tracking-widest uppercase">
-          // ÚLTIMAS COLECCIONES
+          // CATEGORÍAS
         </h2>
-        <Link href="/colecciones" className="text-xs font-bold tracking-widest uppercase hover:opacity-70 transition-opacity flex items-center gap-1">
+        <Link href="/categorias" className="text-xs font-bold tracking-widest uppercase hover:opacity-70 transition-opacity flex items-center gap-1">
           VER TODAS <Plus size={12} weight="bold" />
         </Link>
       </div>
