@@ -4,16 +4,20 @@ import image2 from '@/assets/Mockup.jpeg';
 export const aboutData = {
   hero: {
     eyebrow: "// ABOUT US",
-    titulo: "NO SOMOS\nPARA TODOS.",
-    descripcion: "MURREN no es ropa. MURREN es una forma de existir. Es para quienes no encajan... y no quieren hacerlo.",
-    linkManifiesto: "#",
+    titulo: "MURREN ES PARA\nLOS INCONFORMES.",
+    descripcion: [
+      "Para quienes no encajan en una sola categoría.\nPara quienes entienden que la evolución nunca termina.\nPara quienes han tenido que reconstruirse una y otra vez.",
+      "Nuestra estética mezcla lo industrial con lo humano, la fuerza con la sensibilidad, el caos con la estructura.",
+      "Diseñamos prendas que cuentan historias de transformación, resiliencia y autenticidad.",
+      "No creemos en la perfección.\nCreemos en la evolución."
+    ],
     imagenPrincipal: image1,
     historia: {
-      eyebrow: "// EL ORIGEN",
+      eyebrow: "// EVOLUCIÓN",
       parrafos: [
-        "Todo comenzó en las calles.\nEntre el ruido, el arte urbano y la cultura underground, encontramos nuestra voz.",
-        "Cada pieza que creamos lleva ese espíritu: libertad, autenticidad y actitud sin filtros.",
-        "MURREN no sigue tendencias. Las ignora."
+        "Cada colección es una evolución. Un reflejo de los errores, aprendizajes, transformaciones y victorias que hacen parte del camino de crecer, reinventarse y volver a empezar.",
+        "Creemos que la moda puede ser una herramienta de expresión, confianza y libertad. Por eso diseñamos prendas que no buscan encajar, sino destacar.",
+        "Murren es evolución.\nMurren es identidad.\nMurren es la decisión de convertirse en quien realmente eres."
       ]
     }
   },
@@ -46,19 +50,18 @@ export const aboutData = {
   },
   stats: [
     { valor: "2019", label: "AÑO DE FUNDACIÓN" },
-    { valor: "06",   label: "COLECCIONES" },
-    { valor: "27+",  label: "PAÍSES" },
+    { valor: "100%", label: "EVOLUCIÓN" },
+    { valor: "0",    label: "LÍMITES" },
     { valor: "∞",    label: "ACTITUD" },
   ],
   mensaje: {
     logoTexto: "ESTO ES\nMURREN.",
     parrafos: [
-      "Murren no es ropa. Murren es una forma de existir.",
-      "Murren nace de romper límites, de cuestionar lo establecido y de reconstruirse desde lo auténtico. Es para quienes no encajan… y no quieren hacerlo.",
-      "Creemos en la transformación. En el poder de renacer desde el caos. En convertir lo roto, lo usado, lo olvidado… en identidad.",
-      "Murren es fuerza, es oscuridad, es evolución. Es una estética industrial, alternativa y cruda, que se mezcla con lo humano: emociones, miedos, procesos y crecimiento.",
-      "No vendemos prendas. Creamos armaduras para personas que están en proceso de convertirse en su mejor versión.",
-      "Murren es para quien se atreve a ser."
+      "Murren es una marca colombiana de moda alternativa contemporánea.",
+      "Diseñamos prendas para personas que buscan algo diferente a lo convencional: siluetas con carácter, detalles únicos y una estética que mezcla elementos industriales, futuristas y urbanos.",
+      "Nuestra propuesta nace de la constante transformación. Cada diseño refleja la evolución de la marca y de quienes la usan, creando piezas que transmiten fuerza, autenticidad y personalidad.",
+      "Trabajamos principalmente sobre denim, textiles intervenidos, estampados exclusivos y acabados que convierten cada prenda en una declaración visual.",
+      "Más que ropa, creamos herramientas de expresión para quienes se atreven a construir su propio camino."
     ],
     cierre: "BIENVENIDO A LA FAMILIA.",
   },
@@ -67,10 +70,9 @@ export const aboutData = {
     eyebrow: "¿LISTO PARA SER PARTE?",
     titulo: "ÚNETE AL MOVIMIENTO.",
     redes: [
-      { icono: "InstagramLogo", url: "https://instagram.com/murren" },
-      { icono: "TiktokLogo",    url: "https://tiktok.com/@murren" },
-      { icono: "YoutubeLogo",   url: "https://youtube.com/@murren" },
-      { icono: "TwitterLogo",   url: "https://x.com/murren" },
+      { icono: "InstagramLogo", url: "https://www.instagram.com/murren_co/" },
+      { icono: "TiktokLogo",    url: "https://www.tiktok.com/@murren_co" },
+      { icono: "PinterestLogo", url: "https://co.pinterest.com/murren_co/" }
     ]
   }
 }

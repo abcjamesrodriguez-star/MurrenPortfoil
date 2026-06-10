@@ -48,9 +48,9 @@ export default function CartDrawer() {
             <div className="flex items-center justify-between px-6 py-5 border-b border-neutral-900 bg-black">
               <div className="flex items-center gap-3">
                 <h2 className="text-sm font-black tracking-[0.2em] font-mono text-white flex items-center gap-2">
-                  <span className="text-[#a855f7]">■</span> TU CARRITO
+                  <span className="text-[#4699a1]">■</span> TU CARRITO
                 </h2>
-                <span className="font-mono text-[10px] bg-neutral-900 border border-neutral-800 text-[#a855f7] px-2 py-0.5 font-bold">
+                <span className="font-mono text-[10px] bg-neutral-900 border border-neutral-800 text-[#4699a1] px-2 py-0.5 font-bold">
                   {cartItems.reduce((acc, item) => acc + item.quantity, 0)} PRENDAS
                 </span>
               </div>
@@ -75,10 +75,10 @@ export default function CartDrawer() {
                   {remainingForFreeShipping > 0 ? (
                     <span className="text-neutral-400">
                       COMPLEMENTAR DROPS:{" "}
-                      <span className="text-[#a855f7] font-bold">{formatPrice(remainingForFreeShipping)}</span> PARA ENVÍO GRATIS
+                      <span className="text-[#4699a1] font-bold">{formatPrice(remainingForFreeShipping)}</span> PARA ENVÍO GRATIS
                     </span>
                   ) : (
-                    <span className="text-[#a855f7] font-bold uppercase tracking-wider animate-pulse">
+                    <span className="text-[#4699a1] font-bold uppercase tracking-wider animate-pulse">
                       ★ ENVÍO GRATUITO ACTIVADO
                     </span>
                   )}
@@ -89,7 +89,7 @@ export default function CartDrawer() {
                     initial={{ width: 0 }}
                     animate={{ width: `${progressPercent}%` }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className={`h-full ${remainingForFreeShipping <= 0 ? "bg-[#a855f7]" : "bg-white"}`}
+                    className={`h-full ${remainingForFreeShipping <= 0 ? "bg-[#4699a1]" : "bg-white"}`}
                   />
                 </div>
               </div>
@@ -110,7 +110,7 @@ export default function CartDrawer() {
                   </div>
                   <button
                     onClick={closeCart}
-                    className="border border-[#a855f7] text-[#a855f7] hover:bg-[#a855f7] hover:text-black px-6 py-3.5 text-xs font-bold tracking-[0.2em] font-mono transition-all duration-300"
+                    className="border border-[#4699a1] text-[#4699a1] hover:bg-[#4699a1] hover:text-black px-6 py-3.5 text-xs font-bold tracking-[0.2em] font-mono transition-all duration-300"
                   >
                     ✦ EXPLORAR DROPS ✦
                   </button>
@@ -150,7 +150,7 @@ export default function CartDrawer() {
                             {/* Collection & Category Detail */}
                             {(item.collectionName || item.category) && (
                               <div className="text-[9px] font-mono text-neutral-500 uppercase tracking-widest mb-1 flex gap-1 items-center">
-                                {item.collectionName && <span className="text-[#a855f7]/80">{item.collectionName}</span>}
+                                {item.collectionName && <span className="text-[#4699a1]/80">{item.collectionName}</span>}
                                 {item.collectionName && item.category && <span>·</span>}
                                 {item.category && <span>{item.category}</span>}
                               </div>
@@ -159,7 +159,7 @@ export default function CartDrawer() {
                               <Link
                                 href={`/productos/${item.productSlug}`}
                                 onClick={closeCart}
-                                className="font-bold text-xs uppercase tracking-wider text-white hover:text-[#a855f7] transition-colors duration-200 line-clamp-2"
+                                className="font-bold text-xs uppercase tracking-wider text-white hover:text-[#4699a1] transition-colors duration-200 line-clamp-2"
                               >
                                 {item.productName}
                               </Link>
@@ -198,7 +198,7 @@ export default function CartDrawer() {
                                   {item.quantity} X {formatPrice(item.price)}
                                 </span>
                               )}
-                              <span className="font-mono text-xs text-[#a855f7] font-bold">
+                              <span className="font-mono text-xs text-[#4699a1] font-bold">
                                 {formatPrice(item.price * item.quantity)}
                               </span>
                             </div>
@@ -231,14 +231,14 @@ export default function CartDrawer() {
                   </div>
                   <div className="flex justify-between text-neutral-400">
                     <span>[ LOGÍSTICA_ENVÍO ]</span>
-                    <span className={remainingForFreeShipping <= 0 ? "text-[#a855f7] font-bold" : "text-white"}>
+                    <span className={remainingForFreeShipping <= 0 ? "text-[#4699a1] font-bold" : "text-white"}>
                       {remainingForFreeShipping <= 0 ? "GRATIS" : "CALCULADO AL PAGAR"}
                     </span>
                   </div>
                   <div className="border-t border-neutral-900 my-1.5" />
                   <div className="flex justify-between text-xs font-bold uppercase tracking-[0.15em] text-white">
-                    <span className="text-[#a855f7]">■ TOTAL NETO</span>
-                    <span className="text-[#a855f7] font-mono">{formatPrice(subtotal)}</span>
+                    <span className="text-[#4699a1]">■ TOTAL NETO</span>
+                    <span className="text-[#4699a1] font-mono">{formatPrice(subtotal)}</span>
                   </div>
                 </div>
 
@@ -249,7 +249,7 @@ export default function CartDrawer() {
                       closeCart()
                       router.push("/resumen-compra")
                     }}
-                    className="w-full bg-[#a855f7] text-white hover:bg-white hover:text-black py-4 text-xs font-mono font-bold uppercase tracking-[0.2em] transition-colors duration-300 relative overflow-hidden group/btn border border-[#a855f7] hover:border-white"
+                    className="w-full bg-[#4699a1] text-black hover:bg-white hover:text-black py-4 text-xs font-mono font-bold uppercase tracking-[0.2em] transition-colors duration-300 relative overflow-hidden group/btn border border-[#4699a1] hover:border-white"
                   >
                     [ PROCEDER AL CHECKOUT ]
                   </button>
@@ -262,7 +262,7 @@ export default function CartDrawer() {
             )}
 
             {/* Continuous Seamless Scrolling Legal Marquee Banner at bottom */}
-            <div className="w-full overflow-hidden bg-[#a855f7] text-white py-1.5 select-none font-mono text-[9px] font-black tracking-widest flex items-center border-t border-[#a855f7]">
+            <div className="w-full overflow-hidden bg-[#4699a1] text-black py-1.5 select-none font-mono text-[9px] font-black tracking-widest flex items-center border-t border-[#4699a1]">
               <motion.div
                 animate={{ x: [0, -1200] }}
                 transition={{

@@ -90,7 +90,7 @@ export default function SelectionModal({ producto }: SelectionModalProps) {
 
               {/* Title Section */}
               <div className="flex items-center gap-2.5 border-b-2 border-black pb-3">
-                <WarningCircle size={22} className="text-[#a855f7] shrink-0" weight="fill" />
+                <WarningCircle size={22} className="text-[#4699a1] shrink-0" weight="fill" />
                 <h2 className="text-xs font-mono font-black uppercase tracking-[0.15em] text-black">
                   [ SELECCIÓN COMPLEMENTARIA ]
                 </h2>
@@ -170,7 +170,7 @@ export default function SelectionModal({ producto }: SelectionModalProps) {
                 className={`w-full py-4 text-xs font-mono font-black uppercase tracking-[0.2em] border transition-colors duration-300 
                   ${tallas.length > 0 && tallas.some(t => t.valor !== 'Única') && !tallaSeleccionada
                     ? "bg-neutral-100 text-neutral-400 border-neutral-200 cursor-not-allowed"
-                    : "bg-[#a855f7] text-white border-[#a855f7] hover:bg-white hover:text-black hover:border-black"
+                    : "bg-[#4699a1] text-black border-[#4699a1] hover:bg-white hover:text-black hover:border-black"
                   }`}
               >
                 {tallas.length > 0 && tallas.some(t => t.valor !== 'Única') && !tallaSeleccionada

@@ -45,7 +45,7 @@ export default function Hero() {
           >
             {/* Eyebrow */}
             <p className="text-xs tracking-widest uppercase mb-6 font-medium text-foreground/60">
-              // STREETWEAR QUE<br />DESAFÍA LO ORDINARIO
+              // ES PARA LOS INCONFORMES<br />QUE DESAFÍAN LO ORDINARIO
             </p>
 
             {/* Main Headline */}

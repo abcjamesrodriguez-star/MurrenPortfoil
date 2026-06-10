@@ -6,7 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, CheckSquare, Square, ShieldCheck, Truck, Barcode } from "@phosphor-icons/react"
 
-// Dynamic SVG Barcode Component for High-End Streetwear Aesthetic
+// Dynamic SVG Barcode Component for High-End Aesthetic (Es para los inconformes)
 function SVGBarcode({ totalItems }: { totalItems: number }) {
   return (
     <div className="flex flex-col items-center gap-1">
@@ -132,7 +132,7 @@ export default function ResumenCompraPage() {
         {/* Editorial Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b-[3px] border-black pb-8 mb-12">
           <div>
-            <span className="text-[10px] font-mono tracking-[0.3em] text-[#a855f7] font-black bg-black px-3 py-1.5 uppercase inline-block mb-3">
+            <span className="text-[10px] font-mono tracking-[0.3em] text-[#4699a1] font-black bg-black px-3 py-1.5 uppercase inline-block mb-3">
               ★ SYSTEM ORDER MANIFEST
             </span>
             <h1 className="text-3xl md:text-5xl font-black uppercase leading-none tracking-tighter text-black font-mono">
@@ -202,14 +202,14 @@ export default function ResumenCompraPage() {
                         <div className="flex items-center border border-black text-xs font-semibold bg-[#fafafa]">
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                            className="px-2.5 py-1 hover:bg-black hover:text-white transition-colors"
+                            className="px-2.5 py-1 hover:bg-white hover:text-black transition-colors"
                           >
                             -
                           </button>
                           <span className="px-3 font-mono text-[11px] font-black">{item.quantity}</span>
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                            className="px-2.5 py-1 hover:bg-black hover:text-white transition-colors"
+                            className="px-2.5 py-1 hover:bg-white hover:text-black transition-colors"
                           >
                             +
                           </button>
@@ -247,7 +247,7 @@ export default function ResumenCompraPage() {
               >
                 <div className="mt-0.5 shrink-0 text-black">
                   {acceptedTerms ? (
-                    <CheckSquare size={20} weight="fill" className="text-[#a855f7]" />
+                    <CheckSquare size={20} weight="fill" className="text-[#4699a1]" />
                   ) : (
                     <Square size={20} className="text-neutral-400 group-hover:text-black transition-colors" />
                   )}
@@ -272,7 +272,7 @@ export default function ResumenCompraPage() {
               <div className="relative z-10">
                 <h2 className="text-[10px] font-mono font-black uppercase tracking-[0.25em] text-neutral-400 mb-6 flex justify-between">
                   <span>TOTAL DE LA TRANSACCIÓN</span>
-                  <span className="bg-[#a855f7] text-white px-2.5 py-0.5 text-[9px] font-black tracking-widest font-mono">
+                  <span className="bg-[#4699a1] text-black px-2.5 py-0.5 text-[9px] font-black tracking-widest font-mono">
                     COP
                   </span>
                 </h2>
@@ -284,17 +284,17 @@ export default function ResumenCompraPage() {
                   </div>
                   <div className="flex justify-between text-neutral-400">
                     <span>[ LOGÍSTICA_ENVÍO ]</span>
-                    <span className={isFreeShipping ? "text-[#a855f7] font-bold" : "text-white"}>
+                    <span className={isFreeShipping ? "text-[#4699a1] font-bold" : "text-white"}>
                       {isFreeShipping ? "GRATIS" : "CALCULADO AL PAGAR"}
                     </span>
                   </div>
-                  <div className="text-[9px] text-[#a855f7] leading-snug uppercase tracking-widest font-bold">
+                  <div className="text-[9px] text-[#4699a1] leading-snug uppercase tracking-widest font-bold">
                     * Envío gratis disponible sobre $200.000 COP
                   </div>
                   <div className="border-t border-neutral-800 my-2" />
                   <div className="flex justify-between text-sm font-sans font-black uppercase tracking-[0.15em] text-white">
-                    <span className="text-[#a855f7]">TOTAL NETO</span>
-                    <span className="font-mono text-[#a855f7] text-base font-extrabold">{formatPrice(subtotal)}</span>
+                    <span className="text-[#4699a1]">TOTAL NETO</span>
+                    <span className="font-mono text-[#4699a1] text-base font-extrabold">{formatPrice(subtotal)}</span>
                   </div>
                 </div>
 
@@ -304,7 +304,7 @@ export default function ResumenCompraPage() {
                   className={`w-full py-4.5 text-xs font-mono font-black uppercase tracking-[0.25em] transition-all duration-300 flex items-center justify-center gap-2 border 
                     ${!acceptedTerms 
                       ? "bg-neutral-900 text-neutral-500 border-neutral-800 cursor-not-allowed" 
-                      : "bg-[#a855f7] text-white hover:bg-white hover:text-black border-[#a855f7] hover:border-white cursor-pointer"
+                      : "bg-[#4699a1] text-black hover:bg-white hover:text-black border-[#4699a1] hover:border-white cursor-pointer"
                     }`}
                 >
                   {isCheckingOut ? (
@@ -380,7 +380,7 @@ export default function ResumenCompraPage() {
                       Para compras realizadas a través de canales digitales el cliente podrá solicitar la devolución de su compra dentro de los <strong className="text-black">cinco (5) días hábiles</strong> siguientes a la entrega del producto, siempre que este cumpla con las condiciones de estado descritas en la política de cambios. Si el reembolso es aprobado, el dinero será devuelto al método de pago original. En casos de derecho de retracto, el reembolso se realizará dentro de los <strong className="text-black">treinta (30) días calendario</strong> siguientes a la solicitud, conforme a lo establecido en la Ley 1480 de 2011.
                     </p>
                     <div className="pl-5 mt-1.5">
-                      <Link href="/cambios" className="text-[#a855f7] hover:underline font-bold text-[9px] tracking-widest font-mono">
+                      <Link href="/cambios" className="text-[#4699a1] hover:underline font-bold text-[9px] tracking-widest font-mono">
                         [ VER DETALLE COMPLETO DE DEVOLUCIONES ]
                       </Link>
                     </div>
@@ -394,7 +394,7 @@ export default function ResumenCompraPage() {
                       Podrá solicitar la reversión de su pago dentro de los <strong className="text-black">cinco (5) días hábiles</strong> siguientes en los siguientes casos: sea víctima de fraude en la operación, corresponda a una compra no solicitada por el titular, el producto adquirido no sea recibido, el producto entregado no corresponda a lo solicitado, o el producto resulte defectuoso o con daños.
                     </p>
                     <div className="pl-5 mt-1.5">
-                      <Link href="/cambios#reembolsos" className="text-[#a855f7] hover:underline font-bold text-[9px] tracking-widest font-mono">
+                      <Link href="/cambios#reembolsos" className="text-[#4699a1] hover:underline font-bold text-[9px] tracking-widest font-mono">
                         [ VER CONDICIONES DE REEMBOLSO ]
                       </Link>
                     </div>
@@ -410,7 +410,7 @@ export default function ResumenCompraPage() {
                       <li>— <strong className="text-black">Entrega nacional estimada:</strong> 4 a 6 días hábiles después de ser despachado.</li>
                       <li>— Los tiempos pueden variar según la ciudad de destino, novedades logísticas de la transportadora o temporadas de alta demanda.</li>
                     </ul>
-                    <Link href="/envios" className="text-[#a855f7] hover:underline font-mono text-[9px] tracking-widest font-bold pl-5">
+                    <Link href="/envios" className="text-[#4699a1] hover:underline font-mono text-[9px] tracking-widest font-bold pl-5">
                       [ VER POLÍTICA COMPLETA DE ENVÍOS ]
                     </Link>
                   </div>

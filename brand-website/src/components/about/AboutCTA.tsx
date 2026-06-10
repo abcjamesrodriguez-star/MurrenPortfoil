@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { InstagramLogo, TiktokLogo, YoutubeLogo, TwitterLogo } from "@phosphor-icons/react"
+import { InstagramLogo, TiktokLogo, PinterestLogo, YoutubeLogo, TwitterLogo } from "@phosphor-icons/react"
 import { aboutData } from "@/lib/about"
 
 export default function AboutCTA() {
@@ -11,6 +11,7 @@ export default function AboutCTA() {
     switch (icono) {
       case "InstagramLogo": return <InstagramLogo size={28} weight="regular" />
       case "TiktokLogo": return <TiktokLogo size={28} weight="regular" />
+      case "PinterestLogo": return <PinterestLogo size={28} weight="regular" />
       case "YoutubeLogo": return <YoutubeLogo size={28} weight="regular" />
       case "TwitterLogo": return <TwitterLogo size={28} weight="regular" />
       default: return <InstagramLogo size={28} weight="regular" />

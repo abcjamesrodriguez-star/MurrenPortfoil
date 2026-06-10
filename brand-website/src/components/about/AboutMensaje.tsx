@@ -23,7 +23,7 @@ export default function AboutMensaje() {
 
         {/* Texto y Cierre */}
         <div className="mt-auto">
-          <div className="space-y-4 text-xs lg:text-sm font-medium leading-relaxed max-w-[280px] mb-8" style={{ color: 'var(--color-text-inverse-muted)' }}>
+          <div className="space-y-4 text-xs lg:text-sm font-medium leading-relaxed max-w-[320px] mb-8" style={{ color: 'var(--color-text-inverse-muted)' }}>
             {mensaje.parrafos.map((parrafo, idx) => (
               <p key={idx}>{parrafo}</p>
             ))}

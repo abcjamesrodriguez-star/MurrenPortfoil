@@ -96,7 +96,7 @@ export default function Footer() {
         <p className="text-xs font-bold tracking-widest uppercase text-background/50">
           © {new Date().getFullYear()} MURREN. TODOS LOS DERECHOS RESERVADOS.
         </p>
-        <ThemeSwitcher />
+        {/* <ThemeSwitcher /> */}
       </div>
     </footer>
   );

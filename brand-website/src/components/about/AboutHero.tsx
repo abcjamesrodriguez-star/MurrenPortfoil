@@ -45,23 +45,15 @@ export default function AboutHero() {
               ))}
             </motion.h1>
 
-            <motion.p 
+            <motion.div 
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              className="text-sm text-neutral-700 max-w-[280px] leading-relaxed mb-12"
+              className="text-sm text-neutral-700 max-w-[320px] leading-relaxed mb-8 space-y-4"
             >
-              {hero.descripcion}
-            </motion.p>
-
-            <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
-              <Link 
-                href={hero.linkManifiesto}
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-black hover:opacity-60 transition-colors border-b border-black hover:border-neutral-400 pb-1 w-max group"
-              >
-                VER MANIFIESTO 
-                <span className="transform group-hover:translate-x-1 transition-transform">
-                  <ArrowRight size={16} />
-                </span>
-              </Link>
+              {hero.descripcion.map((parrafo, idx) => (
+                <p key={idx} className="whitespace-pre-line">
+                  {parrafo}
+                </p>
+              ))}
             </motion.div>
           </motion.div>
         </div>

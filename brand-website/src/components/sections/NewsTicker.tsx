@@ -6,11 +6,14 @@ import { motion } from 'framer-motion';
 export default function NewsTicker() {
   // Utilizamos un bloque de texto que se repite para generar el efecto de scroll infinito
   const messages = [
-    "NUEVA COLECCIÓN DISPONIBLE",
+    "FORJADO A TRAVÉS DE LA EVOLUCIÓN",
+    "DESCUENTOS EXCLUSIVOS",
+    "CONSTRUIDO DESDE LA REINVENCIÓN",
+    "DESCUENTOS DE TEMPORADA",
+    "DISEÑADO PARA LA TRANSFORMACIÓN",
     "ENVÍOS GRATIS EN COMPRAS SUPERIORES A $200.000 COP",
-    "STREETWEAR QUE DESAFÍA LO ORDINARIO",
-    "DROPS DE EDICIÓN LIMITADA",
-    "ÚNETE AL FLUJO"
+    "LA EVOLUCIÓN NUNCA TERMINA",
+    "DESCUENTOS ESPECIALES"
   ];
   
   // Repetimos los mensajes varias veces para asegurar que llenen el ancho de la pantalla holgadamente

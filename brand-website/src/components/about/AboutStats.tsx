@@ -40,7 +40,7 @@ function AnimatedNumber({ to, from = 0, isSymbol = false }: { to: string, from?:
   }, [isInView, to, from, isSymbol])
 
   if (isSymbol) {
-    return <span ref={ref}>{to}</span>
+    return <span ref={ref} className="inline-block scale-[1.45] origin-center">{to}</span>
   }
 
   // Formatting output to match original string format (e.g. "06" or "27+")
