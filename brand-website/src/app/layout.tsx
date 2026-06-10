@@ -29,7 +29,7 @@ export default async function RootLayout({
   return (
     <html
       lang="es"
-      data-theme="industrial"
+      data-theme="noir"
       suppressHydrationWarning
       className={`${oswald.variable} h-full antialiased`}
     >
