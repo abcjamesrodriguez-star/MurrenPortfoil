@@ -58,25 +58,25 @@ export default function AboutStats() {
   const { stats } = aboutData
 
   return (
-    <div className="relative w-full h-full bg-white flex items-center">
+    <div className="relative w-full h-full bg-white flex items-center border-t border-neutral-200 lg:border-t-0">
       {/* Tab Lateral Derecho */}
       <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 -rotate-90 text-[10px] tracking-[0.2em] text-neutral-500 whitespace-nowrap select-none pointer-events-none translate-x-1/2">
         STATS
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 w-full divide-x divide-y md:divide-y-0 divide-neutral-200 border-t border-neutral-200 md:border-t-0">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 w-full gap-[1px] bg-neutral-200">
         {stats.map((stat, idx) => {
           const isSymbol = stat.valor === "∞"
           const from = stat.valor === "2019" ? 2010 : 0
 
           return (
-            <div key={idx} className="flex flex-col items-center justify-center py-8 md:py-10">
+            <div key={idx} className="flex flex-col items-center justify-center py-8 md:py-10 bg-white">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="text-5xl lg:text-7xl font-bold uppercase tracking-tight text-black mb-4"
+                className="text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tight text-black mb-4"
               >
                 <AnimatedNumber to={stat.valor} from={from} isSymbol={isSymbol} />
               </motion.div>

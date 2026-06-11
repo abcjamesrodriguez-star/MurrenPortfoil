@@ -22,8 +22,8 @@ export default function ContactoInfo() {
             <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">
               EMAIL / SOPORTE
             </h3>
-            <a href="mailto:hello@murren.com" className="text-lg md:text-xl font-bold tracking-tight hover:text-gray-300 transition-colors">
-              HELLO@MURREN.COM
+            <a href="mailto:storemurren@gmail.com" className="text-lg md:text-xl font-bold tracking-tight hover:text-gray-300 transition-colors">
+              STOREMURREN@GMAIL.COM
             </a>
           </div>
 

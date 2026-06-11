@@ -54,7 +54,7 @@ export default function ContactoFaq() {
                 <div key={idx} className="border-b border-gray-200 last:border-0">
                   <button
                     onClick={() => toggle(idx)}
-                    className="w-full flex items-center justify-between py-6 text-left hover:text-gray-600 transition-colors focus:outline-none"
+                    className="w-full flex items-center justify-between py-6 text-left text-black hover:text-gray-600 transition-colors focus:outline-none"
                   >
                     <span className="text-sm md:text-base font-bold uppercase tracking-wider pr-8">
                       {faq.pregunta}
