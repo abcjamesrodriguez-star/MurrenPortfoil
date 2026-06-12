@@ -21,10 +21,6 @@ export default function CategoriaHeader({ categoria }: { categoria: Category }) 
         <h1 className="text-3xl md:text-5xl font-bold uppercase text-black tracking-tight mb-4">
           {categoria.nombre}
         </h1>
-        <p className="text-gray-600">
-          Explora nuestra selección completa de {categoria.nombre.toLowerCase()}. 
-          {categoria.totalProductos ? ` Encuentra entre ${categoria.totalProductos} estilos únicos.` : ''}
-        </p>
       </div>
     </div>
   )

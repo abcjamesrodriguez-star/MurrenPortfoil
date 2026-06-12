@@ -280,7 +280,7 @@ function mapShopifyProductDetail(node: any): ProductoDetalle {
     coleccionDetalle: {
       slug: coleccionInfo.handle,
       nombre: coleccionInfo.title,
-      temporada: coleccionInfo.handle.includes('fw') ? 'FW23' : 'SS24',
+      temporada: coleccionInfo.handle.includes('fw') ? 'FW23' : '',
     },
     imagenesGaleria,
     coloresDetalle: coloresDetalle.length > 0 ? coloresDetalle : [{ nombre: 'Chrome Black', hex: '#000000' }],
@@ -487,10 +487,11 @@ export async function getShopifyCollections(limit = 30): Promise<Collection[]> {
       id: node.id,
       slug: node.handle,
       nombre: node.title,
-      temporada: node.handle.includes('fw') ? 'FW23' : 'SS24',
+      temporada: node.handle.includes('fw') ? 'FW23' : '',
       numero: index + 1,
       tags: getCollectionTags(node.handle),
       imagen: node.image?.url || '/images/placeholder.png',
+      descripcion: node.description || '',
     }
   })
 }

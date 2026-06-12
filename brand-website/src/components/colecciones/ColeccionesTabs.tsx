@@ -32,7 +32,7 @@ export default function ColeccionesTabs({ activeTab, onTabChange }: ColeccionesT
               transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
             />
           )}
-          {tab}
+          {tab === "SS24" ? "" : tab}
         </button>
       ))}
     </div>

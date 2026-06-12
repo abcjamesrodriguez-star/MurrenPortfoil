@@ -102,7 +102,7 @@ export default function StickyBar({ producto, mainButtonId = "main-add-to-cart" 
               <div className="relative">
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="flex items-center gap-2 px-4 py-3 border border-gray-300 text-xs font-semibold uppercase tracking-wider hover:border-black transition-colors"
+                  className="flex items-center gap-2 px-4 py-3 border border-gray-300 text-xs font-semibold uppercase tracking-wider hover:border-black transition-colors text-black bg-white"
                 >
                   TALLA: {tallaSeleccionada || "SELECCIONAR"}
                   <CaretDown size={14} className={`transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
@@ -129,8 +129,8 @@ export default function StickyBar({ producto, mainButtonId = "main-add-to-cart" 
                           className={`px-4 py-2 text-sm text-left transition-colors ${
                             !t.disponible 
                               ? "text-gray-300 line-through cursor-not-allowed" 
-                              : "hover:bg-gray-100"
-                          } ${tallaSeleccionada === t.valor ? "font-bold" : ""}`}
+                              : "hover:bg-gray-100 text-black bg-white"
+                          } ${tallaSeleccionada === t.valor ? "font-bold text-black" : ""}`}
                         >
                           {t.valor}
                         </button>

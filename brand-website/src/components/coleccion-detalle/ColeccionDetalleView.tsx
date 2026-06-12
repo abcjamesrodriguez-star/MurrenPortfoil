@@ -177,7 +177,7 @@ export default function ColeccionDetalleView({ coleccion, initialProducts }: Col
       </div>
 
       {/* Secciones Inferiores V2 */}
-      <ColeccionCampana />
+      <ColeccionCampana coleccion={coleccion} productos={initialProducts} />
       <ColeccionFeatures />
     </div>
   )

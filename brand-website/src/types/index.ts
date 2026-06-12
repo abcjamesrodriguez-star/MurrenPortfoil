@@ -76,6 +76,7 @@ export type Collection = {
   tags: Array<"NUEVA" | "DESTACADA" | "SS24" | "FW23" | "BASIC">
   estaActual?: boolean
   imagen: string
+  descripcion?: string
 }
 
 export type FiltroColecciones = "TODAS" | "NUEVAS" | "DESTACADAS" | "SS24" | "FW23"

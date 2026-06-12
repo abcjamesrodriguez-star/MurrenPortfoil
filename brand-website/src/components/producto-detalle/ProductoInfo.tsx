@@ -109,7 +109,7 @@ export default function ProductoInfo({ producto }: ProductoInfoProps) {
                 !talla.disponible
                   ? "border-gray-200 text-gray-400 bg-gray-50 cursor-not-allowed line-through"
                   : tallaSeleccionada === talla.valor
-                  ? "border-black bg-black text-white"
+                  ? "border-[#4699a1] bg-[#4699a1] text-black font-extrabold"
                   : "border-gray-300 text-black hover:border-black"
               }`}
             >
@@ -128,7 +128,6 @@ export default function ProductoInfo({ producto }: ProductoInfoProps) {
         </button>
       </div>
 
-      {/* Acciones */}
       <div className="flex flex-col gap-4">
         <button
           id="main-add-to-cart-btn"
@@ -137,9 +136,6 @@ export default function ProductoInfo({ producto }: ProductoInfoProps) {
         >
           <span>AGREGAR AL CARRITO</span>
           <span>+</span>
-        </button>
-        <button className="text-xs font-semibold uppercase tracking-widest text-gray-500 hover:text-black transition-colors text-left flex items-center gap-2">
-          ♡ AGREGAR A FAVORITOS
         </button>
       </div>
 

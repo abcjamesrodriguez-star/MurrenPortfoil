@@ -4,7 +4,6 @@ import { ProductoDetalle, Product } from "@/types"
 import { ProductoProvider } from "./ProductoContext"
 import ProductoGaleria from "./ProductoGaleria"
 import ProductoInfo from "./ProductoInfo"
-import ProductoTabs from "./ProductoTabs"
 import ProductoAccordion from "./ProductoAccordion"
 import ProductoDetallesMedia from "./ProductoDetallesMedia"
 import ColeccionBanner from "./ColeccionBanner"
@@ -29,8 +28,6 @@ export default function ProductoDetalleView({ producto, relacionados }: Producto
   return (
     <ProductoProvider>
       <div className="relative bg-white pb-20 md:pb-0">
-        <ProductoTabs />
-
         {/* Sección Superior: Galería e Info */}
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 py-8 lg:py-16">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">

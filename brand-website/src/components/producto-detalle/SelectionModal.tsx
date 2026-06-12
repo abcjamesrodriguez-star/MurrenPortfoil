@@ -152,7 +152,7 @@ export default function SelectionModal({ producto }: SelectionModalProps) {
                           !talla.disponible
                             ? "border-neutral-200 text-neutral-300 bg-neutral-50 cursor-not-allowed line-through"
                             : tallaSeleccionada === talla.valor
-                            ? "border-black bg-black text-white"
+                            ? "border-[#4699a1] bg-[#4699a1] text-black font-extrabold"
                             : "border-neutral-300 text-black hover:border-black bg-white"
                         }`}
                       >

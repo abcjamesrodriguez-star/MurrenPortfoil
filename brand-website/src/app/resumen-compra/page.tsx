@@ -331,8 +331,6 @@ export default function ResumenCompraPage() {
               <div className="absolute bottom-4 right-4 z-10 flex flex-col items-center">
                 <div className="border-[3px] border-double border-red-500 text-red-500 font-mono text-[9px] font-black uppercase tracking-[0.2em] px-4 py-2 rotate-[-8deg] bg-white shadow-sm select-none">
                   ★ DESPACHADO ★
-                  <br />
-                  <span className="text-[7px]">MURREN BRAND DEVOLUCIONES</span>
                 </div>
               </div>
 

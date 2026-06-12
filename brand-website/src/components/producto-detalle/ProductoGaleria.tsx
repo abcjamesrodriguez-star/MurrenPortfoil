@@ -100,8 +100,12 @@ export default function ProductoGaleria({ imagenes, nombre }: ProductoGaleriaPro
         createPortal(
           <div className="fixed inset-0 z-[100] bg-white flex flex-col">
             <div className="p-6 flex justify-end">
-              <button onClick={() => setIsFullscreen(false)} className="p-2 hover:bg-gray-100 transition-colors">
-                <X size={32} />
+              <button 
+                onClick={() => setIsFullscreen(false)} 
+                className="p-2 border border-black text-black hover:bg-black hover:text-white transition-colors duration-200"
+                title="Cerrar vista completa"
+              >
+                <X size={24} />
               </button>
             </div>
             <div className="flex-1 relative flex items-center justify-center overflow-hidden">

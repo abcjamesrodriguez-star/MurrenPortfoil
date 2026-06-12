@@ -7,7 +7,7 @@ export default function AnnouncementBar() {
       <div className="text-center flex-1 font-medium tracking-wide">
         ENVÍOS GRATIS EN COMPRAS SUPERIORES A $200.000 COP
       </div>
-      <div className="hidden sm:block">SOPORTE</div>
+      <div className="hidden sm:block w-6"></div>
     </div>
   );
 }

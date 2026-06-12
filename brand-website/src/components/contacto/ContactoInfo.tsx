@@ -48,7 +48,12 @@ export default function ContactoInfo() {
               KR 10 # 9-37 LOCAL 2275<br />
               BOGOTÁ, COLOMBIA
             </p>
-            <p className="text-xs text-gray-400 mt-2">Solo con cita previa.</p>
+            <div className="text-xs text-gray-400 mt-4 space-y-1 leading-relaxed">
+              <p className="font-bold text-gray-300 uppercase tracking-wider mb-1">Horario de atención (Local físico):</p>
+              <p>• Lunes, Martes, Jueves y Viernes: 9:00 a.m. a 6:00 p.m.</p>
+              <p>• Miércoles y Sábados (Madrugones): 4:00 a.m. a 6:00 p.m.</p>
+              <p>• Domingos y Festivos: 9:30 a.m. a 4:00 p.m.</p>
+            </div>
           </div>
         </div>
       </div>

@@ -36,11 +36,13 @@ export default function ColeccionesSidebar({
                   : "text-neutral-400 group-hover:text-neutral-600"
                 }`}
             >
-              {f}
+              {f === "SS24" ? "" : f}
             </span>
-            <span className="text-[10px] text-neutral-400 font-mono">
-              ({String(conteos[f]).padStart(2, "0")})
-            </span>
+            {f !== "SS24" && (
+              <span className="text-[10px] text-neutral-400 font-mono">
+                ({String(conteos[f]).padStart(2, "0")})
+              </span>
+            )}
           </button>
         ))}
       </div>

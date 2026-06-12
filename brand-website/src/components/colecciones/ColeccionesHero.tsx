@@ -52,12 +52,6 @@ export default function ColeccionesHero({ actual }: { actual: Collection }) {
           Descubre los drops que definen<br />
           nuestra visión.
         </p>
-        <Link
-          href="/manifiesto"
-          className="inline-flex items-center gap-2 text-sm font-medium underline underline-offset-4 hover:opacity-60 transition-opacity text-black"
-        >
-          VER MANIFIESTO <ArrowRight size={14} />
-        </Link>
       </div>
 
       {/* Colección actual — esquina inferior derecha */}
