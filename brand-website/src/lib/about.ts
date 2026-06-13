@@ -1,5 +1,7 @@
-import image1 from '@/assets/Mockup.jpeg';
-import image2 from '@/assets/Mockup.jpeg';
+import aboutImg1 from '@/assets/FotosAbout/1.jpeg';
+import aboutImg2 from '@/assets/FotosAbout/2.jpeg';
+import aboutImg3 from '@/assets/FotosAbout/3.jpeg';
+
 
 export const aboutData = {
   hero: {
@@ -11,7 +13,7 @@ export const aboutData = {
       "Diseñamos prendas que cuentan historias de transformación, resiliencia y autenticidad.",
       "No creemos en la perfección.\nCreemos en la evolución."
     ],
-    imagenPrincipal: image1,
+    imagenPrincipal: aboutImg1,
     historia: {
       eyebrow: "// EVOLUCIÓN",
       parrafos: [
@@ -38,8 +40,8 @@ export const aboutData = {
   },
   valores: {
     imagenes: [
-      { src: image2, fecha: "25 | 07\n20 : 15" },
-      { src: image1 },
+      { src: aboutImg3, fecha: "25 | 07\n20 : 15" },
+      { src: aboutImg2 },
     ],
     lista: [
       { icono: "X",         titulo: "AUTENTICIDAD", descripcion: "No imitamos. Creamos desde lo real." },
@@ -65,7 +67,7 @@ export const aboutData = {
     ],
     cierre: "BIENVENIDO A LA FAMILIA.",
   },
-  imagenGrupal: image2,
+  imagenGrupal: aboutImg1,
   cta: {
     eyebrow: "¿LISTO PARA SER PARTE?",
     titulo: "ÚNETE AL MOVIMIENTO.",

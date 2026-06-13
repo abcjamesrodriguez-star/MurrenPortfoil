@@ -59,17 +59,15 @@ export default function AboutHero() {
         </div>
 
         {/* COLUMNA CENTRAL: Imagen */}
-        <div className="flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-neutral-200 p-6 lg:p-12">
-          <div className="relative w-full aspect-video">
-            <Image 
-              src={hero.imagenPrincipal} 
-              alt="Hero Image" 
-              fill 
-              className="object-cover grayscale"
-              sizes="(max-width: 1024px) 100vw, 40vw"
-              priority
-            />
-          </div>
+        <div className="relative w-full h-[350px] lg:h-full min-h-[350px] border-b lg:border-b-0 lg:border-r border-neutral-200 overflow-hidden">
+          <Image 
+            src={hero.imagenPrincipal} 
+            alt="Hero Image" 
+            fill 
+            className="object-cover grayscale"
+            sizes="(max-width: 1024px) 100vw, 40vw"
+            priority
+          />
         </div>
 
         {/* COLUMNA DERECHA: Historia */}

@@ -35,7 +35,7 @@ export default function ContactoInfo() {
             <a href="https://api.whatsapp.com/send?phone=573017581950" target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl font-bold tracking-tight hover:text-gray-300 transition-colors">
               +57 301 758 1950
             </a>
-            <p className="text-xs text-gray-400 mt-2">Lunes a Viernes, 9AM - 6PM (COT)</p>
+            <p className="text-xs text-gray-400 mt-2">Lunes a Viernes, 8AM - 5PM (COL)</p>
           </div>
 
           {/* Bloque 3 */}
