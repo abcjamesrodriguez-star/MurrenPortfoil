@@ -1,10 +1,28 @@
+import { Metadata } from "next"
 import ContactoInfo from "@/components/contacto/ContactoInfo"
 import ContactoForm from "@/components/contacto/ContactoForm"
 import ContactoFaq from "@/components/contacto/ContactoFaq"
 
-export const metadata = {
-  title: "Contacto | Murren Brand",
-  description: "Comunícate con Murren para dudas, devoluciones o colaboraciones.",
+export const metadata: Metadata = {
+  title: "Contacto",
+  description: "Ponte en contacto con el equipo de MURREN. Resuelve tus dudas sobre pedidos, cambios, envíos o colaboraciones de streetwear en Bogotá, Colombia.",
+  alternates: {
+    canonical: "https://murren.com.co/contacto"
+  },
+  openGraph: {
+    type: "website",
+    url: "https://murren.com.co/contacto",
+    title: "Contacto — MURREN",
+    description: "Ponte en contacto con el equipo de MURREN para dudas, devoluciones o colaboraciones.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Contacto MURREN",
+      }
+    ]
+  }
 }
 
 export default function ContactoPage() {

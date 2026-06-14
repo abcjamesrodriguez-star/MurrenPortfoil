@@ -5,8 +5,25 @@ import ColeccionesLayout from "@/components/colecciones/ColeccionesLayout"
 export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
-  title: "Colecciones — MURREN",
-  description: "Descubre los drops que definen nuestra visión.",
+  title: "Colecciones",
+  description: "Explora los lanzamientos y drops exclusivos de MURREN. Ediciones limitadas de streetwear diseñadas y fabricadas en Bogotá, Colombia.",
+  alternates: {
+    canonical: "https://murren.com.co/colecciones"
+  },
+  openGraph: {
+    type: "website",
+    url: "https://murren.com.co/colecciones",
+    title: "Colecciones — MURREN",
+    description: "Explora los lanzamientos y drops exclusivos de MURREN. Ediciones limitadas de streetwear con diseño independiente.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Colecciones MURREN",
+      }
+    ]
+  }
 }
 
 export default async function ColeccionesPage() {

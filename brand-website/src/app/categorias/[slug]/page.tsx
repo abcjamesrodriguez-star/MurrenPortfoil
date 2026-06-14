@@ -17,9 +17,36 @@ export async function generateMetadata({ params }: Props) {
     return { title: "Categoría no encontrada" }
   }
 
+  const title = `${categoria.nombre} | Categorías`;
+  const description = `Explora nuestra selección completa de ${categoria.nombre.toLowerCase()} en MURREN. Streetwear de diseño independiente en Bogotá, Colombia.`;
+  const url = `https://murren.com.co/categorias/${slug}`;
+
   return {
-    title: `${categoria.nombre} | Categorías Murren`,
-    description: `Explora nuestra selección completa de ${categoria.nombre.toLowerCase()}.`,
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      type: "website",
+      title,
+      description,
+      url,
+      images: [
+        {
+          url: categoria.imagen || "/og-image.png",
+          width: 800,
+          height: 1000,
+          alt: categoria.nombre,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [categoria.imagen || "/og-image.png"],
+    },
   }
 }
 

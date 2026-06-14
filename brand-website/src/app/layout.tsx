@@ -15,8 +15,52 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "MURREN — Sitio Oficial",
-  description: "MURREN no es ropa. Es una forma de existir.",
+  metadataBase: new URL("https://murren.com.co"),
+  title: {
+    default: "MURREN — Sitio Oficial | Streetwear Premium Bogotá",
+    template: "%s | MURREN"
+  },
+  description: "MURREN no es ropa. Es una forma de existir. Descubre nuestra colección de streetwear de diseño independiente, chaquetas, camisetas y hoodies oversized en Bogotá, Colombia. Envíos nacionales.",
+  keywords: ["streetwear colombia", "ropa urbana bogota", "diseño independiente colombia", "murren", "murren bogota", "moda urbana", "oversized hoodie colombia", "camisetas urbanas premium", "streetwear brand colombia"],
+  authors: [{ name: "MURREN Team" }],
+  creator: "MURREN",
+  publisher: "MURREN",
+  alternates: {
+    canonical: "/"
+  },
+  openGraph: {
+    type: "website",
+    locale: "es_CO",
+    url: "https://murren.com.co",
+    title: "MURREN — Sitio Oficial | Streetwear Premium Bogotá",
+    description: "MURREN no es ropa. Es una forma de existir. Descubre nuestra colección de streetwear de diseño independiente en Bogotá, Colombia.",
+    siteName: "MURREN",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "MURREN — Streetwear Premium",
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MURREN — Sitio Oficial | Streetwear Premium",
+    description: "MURREN no es ropa. Es una forma de existir.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    }
+  }
 };
 
 export default async function RootLayout({
@@ -38,6 +82,34 @@ export default async function RootLayout({
         <Script id="theme-init" strategy="beforeInteractive">
           {`(function(){try{var t=localStorage.getItem('murren-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`}
         </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ClothingStore",
+              "name": "MURREN",
+              "image": "https://murren.com.co/og-image.png",
+              "@id": "https://murren.com.co/#store",
+              "url": "https://murren.com.co",
+              "telephone": "+573017581950",
+              "priceRange": "$$",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Bogotá, Colombia",
+                "addressLocality": "Bogotá",
+                "addressRegion": "Cundinamarca",
+                "postalCode": "110111",
+                "addressCountry": "CO"
+              },
+              "sameAs": [
+                "https://www.instagram.com/murren_co/",
+                "https://www.tiktok.com/@murren_co",
+                "https://co.pinterest.com/murren_co/"
+              ]
+            })
+          }}
+        />
         <CartProvider>
           <ConditionalLayout categories={categories}>
             {children}

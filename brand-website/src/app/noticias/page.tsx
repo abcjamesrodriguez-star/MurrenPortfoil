@@ -1,8 +1,31 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Metadata } from 'next';
 import { sanityClient, allNewsQuery } from '@/lib/sanity';
 import { Plus } from '@phosphor-icons/react/dist/ssr';
+
+export const metadata: Metadata = {
+  title: "Journal",
+  description: "Entérate de las últimas noticias, drops exclusivos, eventos y la cultura urbana que rodea el universo MURREN.",
+  alternates: {
+    canonical: "https://murren.com.co/noticias"
+  },
+  openGraph: {
+    type: "website",
+    url: "https://murren.com.co/noticias",
+    title: "Journal — MURREN",
+    description: "Entérate de las últimas noticias, drops exclusivos, eventos y la cultura urbana de MURREN.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Journal MURREN",
+      }
+    ]
+  }
+};
 
 export const revalidate = 60; // Revalida cada 60 segundos
 

@@ -8,8 +8,25 @@ import AboutImagenGrupal from "@/components/about/AboutImagenGrupal"
 import AboutCTA from "@/components/about/AboutCTA"
 
 export const metadata: Metadata = {
-  title: "About — MURREN",
-  description: "MURREN nace desde la necesidad de expresarnos sin pedir permiso. Ropa para quienes viven diferente.",
+  title: "Sobre Nosotros",
+  description: "Conoce la historia de MURREN. Streetwear de diseño independiente nacido en Bogotá, Colombia. Creamos ropa para quienes viven diferente y se expresan sin pedir permiso.",
+  alternates: {
+    canonical: "https://murren.com.co/about"
+  },
+  openGraph: {
+    type: "website",
+    url: "https://murren.com.co/about",
+    title: "Sobre Nosotros — MURREN",
+    description: "Conoce la historia de MURREN. Streetwear de diseño independiente nacido en Bogotá, Colombia. Ropa para quienes viven diferente.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "MURREN — Sobre Nosotros",
+      }
+    ]
+  }
 }
 
 export default function AboutPage() {

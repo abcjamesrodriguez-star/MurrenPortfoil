@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 import { sanityClient, singleNewsQuery } from '@/lib/sanity';
 import PortableTextRenderer from '@/components/sections/PortableTextRenderer';
 import { ArrowLeft } from '@phosphor-icons/react/dist/ssr';
@@ -34,7 +35,52 @@ async function getNewsBySlug(slug: string): Promise<SanityNoticiaDetalle | null>
   }
 }
 
-export default async function NewsArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const article = await getNewsBySlug(resolvedParams.slug);
+
+  if (!article) {
+    return { title: "Artículo no encontrado" };
+  }
+
+  const title = `${article.titulo} | Journal`;
+  const description = `Entérate de las últimas noticias, drops y novedades de MURREN: ${article.titulo}`;
+  const url = `https://murren.com.co/noticias/${resolvedParams.slug}`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      type: "article",
+      title,
+      description,
+      url,
+      publishedTime: article.fechaPublicacion,
+      authors: article.autor ? [article.autor] : undefined,
+      images: [
+        {
+          url: article.imagen || "/og-image.png",
+          alt: article.titulo,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [article.imagen || "/og-image.png"],
+    },
+  };
+}
+
+export default async function NewsArticlePage({ params }: PageProps) {
   // En Next.js 15+ params es una Promise
   const resolvedParams = await params;
   const article = await getNewsBySlug(resolvedParams.slug);
@@ -43,8 +89,36 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": article.titulo,
+    "image": article.imagen || "https://murren.com.co/og-image.png",
+    "datePublished": article.fechaPublicacion,
+    "author": article.autor ? {
+      "@type": "Person",
+      "name": article.autor
+    } : {
+      "@type": "Organization",
+      "name": "MURREN"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MURREN",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://murren.com.co/og-image.png"
+      }
+    },
+    "description": article.titulo
+  };
+
   return (
     <article className="w-full min-h-screen bg-background text-foreground pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       
       {/* Header Visual con la Imagen Principal */}
       <div className="relative w-full h-[50vh] md:h-[70vh] bg-foreground/5 overflow-hidden">
