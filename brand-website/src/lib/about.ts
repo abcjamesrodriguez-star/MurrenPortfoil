@@ -1,6 +1,7 @@
 import aboutImg1 from '@/assets/FotosAbout/1.jpeg';
 import aboutImg2 from '@/assets/FotosAbout/2.jpeg';
 import aboutImg3 from '@/assets/FotosAbout/3.jpeg';
+import aboutImg4 from '@/assets/FotosAbout/4.jpeg';
 
 
 export const aboutData = {
@@ -67,7 +68,7 @@ export const aboutData = {
     ],
     cierre: "BIENVENIDO A LA FAMILIA.",
   },
-  imagenGrupal: aboutImg1,
+  imagenGrupal: aboutImg4,
   cta: {
     eyebrow: "¿LISTO PARA SER PARTE?",
     titulo: "ÚNETE AL MOVIMIENTO.",

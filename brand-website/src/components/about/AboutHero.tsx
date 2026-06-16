@@ -64,7 +64,7 @@ export default function AboutHero() {
             src={hero.imagenPrincipal} 
             alt="Hero Image" 
             fill 
-            className="object-cover grayscale"
+            className="object-cover object-left grayscale"
             sizes="(max-width: 1024px) 100vw, 40vw"
             priority
           />
